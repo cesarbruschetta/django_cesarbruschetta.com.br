@@ -13,8 +13,11 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+# CAMINHO A PARTIR do MANAGER
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# CAMINHO APARTIR DO SETTINGS
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -58,7 +61,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, "core/templates"),
+            os.path.join(PROJECT_DIR, "core/templates"),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -67,6 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.static'
             ],
         },
     },
@@ -81,10 +85,11 @@ WSGI_APPLICATION = 'aplication.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '',
+        'NAME': 'sitecesar',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': 'localhost',
+        'STORAGE_ENGINE': 'MyISAM',
         'OPTIONS': {'init_command': 'SET storage_engine=MyISAM', },
     }
 }
@@ -117,18 +122,27 @@ USE_THOUSAND_SEPARATOR = True
 NUMBER_GROUPING = 3
 
 
+# Absolute filesystem path to the directory that will hold user-uploaded files.
+# Example: "/var/www/example.com/media/"
+MEDIA_ROOT = 'media/'
+
+# URL that handles the media served from MEDIA_ROOT. Make sure to use a
+# trailing slash.
+# Examples: "http://example.com/media/", "http://media.example.com/"
+MEDIA_URL = '/media/'
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = 'static/'
+STATIC_ROOT = "static/"
 
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(BASE_DIR, "core/"),
+    os.path.join(PROJECT_DIR, "core/static"),
 )
 
 

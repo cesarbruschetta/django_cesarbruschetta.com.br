@@ -1,0 +1,87 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Aluspisan a Bootstarp  Website Template | Home :: w3layouts</title>
+
+    {% block metas %}
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {% endblock %}
+    {% block styles %}
+        {% include 'base/styles.html' %}
+    {% endblock %}
+
+    </head>
+    <body>
+        <!-- header -->
+        <div class="banner">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><img src="{{ STATIC_URL }}images/logo.png" alt="" /></a>
+                </div>
+                <div class="head-nav">
+                    <span class="menu"> </span>
+                    <ul>
+                        <li class="active"><a href="index.html">home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">portfolio</a></li>
+                        <li><a href="blog.html">blog</a></li>
+                        <li><a href="contact.html">contact</a></li>
+                        <div class="clearfix"> </div>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+                {% block banner_title %}
+                    <!-- BLOCO DE BANNER OU DE TITULO DA PAGINA -->
+                {% endblock %}
+            </div>
+        </div>
+        <!-- header -->
+        <div id="content">
+        {% block content %}
+            <!-- CONTEUDO PRINCIPAL DO SITE -->
+        {% endblock %}
+
+        </div>
+
+        <!-- footer -->
+        <div class="footer">
+            <div class="container">
+                <div class="col-md-4">
+                    <p>Template by <a href="http://w3layouts.com" target="_blank"> w3layouts</a></p>
+                </div>
+                <div class="col-md-4 policy">
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <div class="clearfix"></div>
+                    </ul>
+                </div>
+                    <div class="col-md-4 social">
+                        <ul>
+                            <li><a href="#"><i class="fb"> </i></a></li>
+                            <li><a href="#"><i class="twt"> </i></a></li>
+                            <li><a href="#"><i class="goog"> </i></a></li>
+                            <li><a href="#"><i class="in"> </i></a></li>
+                            <li><a href="#"><i class="pp"> </i></a></li>
+                            <div class="clearfix"></div>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        {% block scripts %}
+            {% include 'base/scripts.html' %}
+        {% endblock %}
+    </body>
+</html>

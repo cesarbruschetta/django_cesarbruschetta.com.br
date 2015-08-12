@@ -8,21 +8,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <title>Aluspisan a Bootstarp  Website Template | Home :: w3layouts</title>
-<link href="web/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-<link href="web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<link href="{{ STATIC_URL }}css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,700,300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="web/css/flexslider.css" type="text/css" media="screen" />
-<script src="web/js/jquery.min.js"></script>	
+<link rel="stylesheet" href="{{ STATIC_URL }}css/flexslider.css" type="text/css" media="screen" />
+<script src="{{ STATIC_URL }}js/jquery.min.js"></script>
 </head>
 <body>
 <!-- header -->
 <div class="banner1">
 	<div class="container">
 		<div class="logo">
-			<a href="index.html"><img src="web/images/logo.png" alt="" /></a>
+			<a href="index.html"><img src="{{ STATIC_URL }}images/logo.png" alt="" /></a>
 		</div>
 		<div class="head-nav">
 			<span class="menu"> </span>
@@ -44,9 +44,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						  });
 						});
 					</script>
-				<!-- script-for-nav -->		
-				<div class="clearfix"> </div>	
-			<h1>blog</h1>	
+				<!-- script-for-nav -->
+				<div class="clearfix"> </div>
+			<h1>blog</h1>
 	</div>
 </div>
 <!-- header -->
@@ -62,12 +62,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<h3><a href="single.html">Visualizing Tweets around Emmy-nominated shows</a></h3>
 								<div class="blog-artical-grid-pic-info">
 									<div class="blog-artical-grid-pic">
-										<a href="single.html"><img src="web/images/device2.jpg" class="img-responsive" alt="" /></a>
+										<a href="single.html"><img src="{{ STATIC_URL }}images/device2.jpg" class="img-responsive" alt="" /></a>
 									</div>
 									<div class="blog-artical-grid-pic-info-admin">
 										<div class="blog-artical-grid-pic-info-admin-left">
 											<ul>
-												<li><a href="#"><img src="web/images/admin-pic1.jpg" title="name-here"></a></li>
+												<li><a href="#"><img src="{{ STATIC_URL }}images/admin-pic1.jpg" title="name-here"></a></li>
 												<li><p>Written by <a href="#">Garry Walt</a></p></li>
 											</ul>
 										</div>
@@ -106,12 +106,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<h3><a href="single.html">London Fashion Week drives more buzz than ever on Twitter</a></h3>
 								<div class="blog-artical-grid-pic-info">
 									<div class="blog-artical-grid-pic">
-										<a href="single.html"><img src="web/images/device3.jpg" class="img-responsive" alt="" /></a>
+										<a href="single.html"><img src="{{ STATIC_URL }}images/device3.jpg" class="img-responsive" alt="" /></a>
 									</div>
 									<div class="blog-artical-grid-pic-info-admin">
 										<div class="blog-artical-grid-pic-info-admin-left">
 											<ul>
-												<li><a href="#"><img src="web/images/admin-pic4.jpg" title="name-here"></a></li>
+												<li><a href="#"><img src="{{ STATIC_URL }}images/admin-pic4.jpg" title="name-here"></a></li>
 												<li><p>Written by <a href="#">Garry Walt</a></p></li>
 											</ul>
 										</div>
@@ -150,12 +150,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<h3><a href="#">#RockInRio 2013</a></h3>
 								<div class="blog-artical-grid-pic-info">
 									<div class="blog-artical-grid-pic">
-										<a href="single.html"><img src="web/images/device2.jpg" class="img-responsive" alt="" /></a>
+										<a href="single.html"><img src="{{ STATIC_URL }}images/device2.jpg" class="img-responsive" alt="" /></a>
 									</div>
 									<div class="blog-artical-grid-pic-info-admin">
 										<div class="blog-artical-grid-pic-info-admin-left">
 											<ul>
-												<li><a href="#"><img src="web/images/admin-pic2.jpg" title="name-here"></a></li>
+												<li><a href="#"><img src="{{ STATIC_URL }}images/admin-pic2.jpg" title="name-here"></a></li>
 												<li><p>Written by <a href="#">Garry Walt</a></p></li>
 											</ul>
 										</div>
@@ -194,12 +194,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<h3><a href="single.html">Vine videos that grew on us - Sept 13</a></h3>
 								<div onclick="location.href='singlepage.html';" class="blog-artical-grid-pic-info">
 									<div class="blog-artical-grid-pic">
-										<a href="single.html"><img src="web/images/device3.jpg" class="img-responsive" alt="" /></a>
+										<a href="single.html"><img src="{{ STATIC_URL }}images/device3.jpg" class="img-responsive" alt="" /></a>
 									</div>
 									<div class="blog-artical-grid-pic-info-admin">
 										<div class="blog-artical-grid-pic-info-admin-left">
 											<ul>
-												<li><a href="#"><img src="web/images/admin-pic3.jpg" title="name-here"></a></li>
+												<li><a href="#"><img src="{{ STATIC_URL }}images/admin-pic3.jpg" title="name-here"></a></li>
 												<li><p>Written by <a href="#">Garry Walt</a></p></li>
 											</ul>
 										</div>
@@ -253,8 +253,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<h3>CaTEGORIES</h3>
 						</div>
 						<!----start-accordinatio-files--->
-						<script src="web/js/vallenato.js" type="text/javascript" charset="utf-8"></script>
-						<link rel="stylesheet" href="web/css/vallenato.css" type="text/css" media="screen" charset="utf-8">
+						<script src="{{ STATIC_URL }}js/vallenato.js" type="text/javascript" charset="utf-8"></script>
+						<link rel="stylesheet" href="{{ STATIC_URL }}css/vallenato.css" type="text/css" media="screen" charset="utf-8">
 						<!----start-accordinatio-files--->
 						<div class="blog-right-accordinations">
 							<h2 class="accordion-header active-header">Webdesign</h2>
@@ -339,7 +339,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="blog-comment-grids">
 								<div class="blog-comment-grid">
 									<div class="blog-comment-grid-left">
-										<img src="web/images/admin-pic1.jpg" alt="">
+										<img src="{{ STATIC_URL }}images/admin-pic1.jpg" alt="">
 									</div>
 									<div class="blog-comment-grid-right">
 										<a href="#">Endy Brown</a>
@@ -349,7 +349,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 								<div class="blog-comment-grid">
 									<div class="blog-comment-grid-left">
-										<img src="web/images/admin-pic2.jpg" alt="">
+										<img src="{{ STATIC_URL }}images/admin-pic2.jpg" alt="">
 									</div>
 									<div class="blog-comment-grid-right">
 										<a href="#">Millana Watson</a>
@@ -359,7 +359,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 								<div class="blog-comment-grid">
 									<div class="blog-comment-grid-left">
-										<img src="web/images/admin-pic3.jpg" alt="">
+										<img src="{{ STATIC_URL }}images/admin-pic3.jpg" alt="">
 									</div>
 									<div class="blog-comment-grid-right">
 										<a href="#">Andrew Haching</a>
@@ -369,7 +369,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 								<div class="blog-comment-grid">
 									<div class="blog-comment-grid-left">
-										<img src="web/images/admin-pic4.jpg" alt="">
+										<img src="{{ STATIC_URL }}images/admin-pic4.jpg" alt="">
 									</div>
 									<div class="blog-comment-grid-right">
 										<a href="#">Bruse Loome</a>

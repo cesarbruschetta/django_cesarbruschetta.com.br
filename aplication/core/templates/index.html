@@ -1,106 +1,60 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>Aluspisan a Bootstarp  Website Template | Home :: w3layouts</title>
-<link href="web/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-<link href="web/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,700,300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="web/css/flexslider.css" type="text/css" media="screen" />
-<script src="web/js/jquery.min.js"></script>	
-</head>
-<body>
-<!-- header -->
-<div class="banner">
-	<div class="container">
-		<div class="logo">
-			<a href="index.html"><img src="web/images/logo.png" alt="" /></a>
+{% extends 'base/base.html' %}
+{% block banner_title %}
+
+	<section class="slider">
+		<div class="flexslider">
+			<ul class="slides">
+				<li>
+					<div class="banner-info">
+						<h1>Welcome</h1>
+						<p>Lorem ipsum dolor sit amet,</p>
+						<p>consectetur adipisicing elit.</p>
+					</div>
+				</li>
+				<li>
+					<div class="banner-info">
+						<h1>Welcome</h1>
+						<p>Lorem ipsum dolor sit amet,</p>
+						<p>consectetur adipisicing elit.</p>
+					</div>
+				</li>
+				<li>
+					<div class="banner-info">
+						<h1>Welcome</h1>
+						<p>Lorem ipsum dolor sit amet,</p>
+						<p>consectetur adipisicing elit.</p>
+					</div>
+				</li>
+				<li>
+					<div class="banner-info">
+						<h1>Welcome</h1>
+						<p>Lorem ipsum dolor sit amet,</p>
+						<p>consectetur adipisicing elit.</p>
+					</div>
+				</li>
+			</ul>
 		</div>
-		<div class="head-nav">
-			<span class="menu"> </span>
-				<ul>
-					<li class="active"><a href="index.html">home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="services.html">Services</a></li>
-					<li><a href="portfolio.html">portfolio</a></li>
-					<li><a href="blog.html">blog</a></li>
-					<li><a href="contact.html">contact</a></li>
-						<div class="clearfix"> </div>
-				</ul>
-		</div>
-		<!-- script-for-nav -->
-					<script>
-						$( "span.menu" ).click(function() {
-						  $( ".head-nav ul" ).slideToggle(300, function() {
-							// Animation complete.
-						  });
-						});
-					</script>
-				<!-- script-for-nav -->		
-				<div class="clearfix"> </div>				
-				
-					<section class="slider">
-						<div class="flexslider">
-							<ul class="slides">
-								<li>
-									<div class="banner-info">
-										<h1>Welcome</h1>
-										<p>Lorem ipsum dolor sit amet,</p>
-										<p>consectetur adipisicing elit.</p>
-									</div>
-								</li>
-								<li>
-									<div class="banner-info">
-										<h1>Welcome</h1>
-										<p>Lorem ipsum dolor sit amet,</p>
-										<p>consectetur adipisicing elit.</p>
-									</div>
-								</li>
-								<li>	
-									<div class="banner-info">
-										<h1>Welcome</h1>
-										<p>Lorem ipsum dolor sit amet,</p>
-										<p>consectetur adipisicing elit.</p>
-									</div>
-								</li>
-								<li>	
-									<div class="banner-info">
-										<h1>Welcome</h1>
-										<p>Lorem ipsum dolor sit amet,</p>
-										<p>consectetur adipisicing elit.</p>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</section>
-				
-						<!-- FlexSlider -->
-							  <script defer src="web/js/jquery.flexslider.js"></script>
-							  <script type="text/javascript">
-								$(function(){
-								  SyntaxHighlighter.all();
-								});
-								$(window).load(function(){
-								  $('.flexslider').flexslider({
-									animation: "slide",
-									start: function(slider){
-									  $('body').removeClass('loading');
-									}
-								  });
-								});
-							  </script>
-						<!-- FlexSlider -->
-	</div>
-</div>
-<!-- header -->
+	</section>
+
+	<!-- FlexSlider -->
+		  <script defer src="{{ STATIC_URL }}js/jquery.flexslider.js"></script>
+		  <script type="text/javascript">
+			$(function(){
+			  SyntaxHighlighter.all();
+			});
+			$(window).load(function(){
+			  $('.flexslider').flexslider({
+				animation: "slide",
+				start: function(slider){
+				  $('body').removeClass('loading');
+				}
+			  });
+			});
+		  </script>
+	<!-- FlexSlider -->
+{% endblock %}
+
+{% block content %}
 <!-- services -->
 	<div class="ourservices">
 		<div class="container">
@@ -130,49 +84,49 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<p class="stud">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
 	<div class="studies">
 		<div class="wmuSlider example1 section" id="section-1">
-			   <article style="position: absolute; width: 100%; opacity: 0;"> 
+			   <article style="position: absolute; width: 100%; opacity: 0;">
 							<div class="data">
 								<h4>Lorem ipsum llc</h4>
-								<p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p> 
+								<p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 								<a class="read-more" href="#">read more</a>
 							</div>
 							<div class="man">
-								<img src="web/images/device.png" class="img-responsive" alt="" />
+								<img src="{{ STATIC_URL }}images/device.png" class="img-responsive" alt="" />
 							</div>
 								<div class="clearfix"></div>
-				   
+
 				</article>
-				<article style="position: absolute; width: 100%; opacity: 0;"> 
+				<article style="position: absolute; width: 100%; opacity: 0;">
 							<div class="data">
 								<h4>Lorem ipsum llc</h4>
-								<p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p> 
+								<p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 								<a class="read-more" href="#">read more</a>
 							</div>
 							<div class="man">
-								<img src="web/images/device1.jpg" class="img-responsive" alt="" />
+								<img src="{{ STATIC_URL }}images/device1.jpg" class="img-responsive" alt="" />
 							</div>
 								<div class="clearfix"></div>
-				  
+
 				</article>
-				<article style="position: absolute; width: 100%; opacity: 0;"> 
+				<article style="position: absolute; width: 100%; opacity: 0;">
 							<div class="data">
 								 <h4>Lorem ipsum llc</h4>
-								<p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p> 
+								<p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 								<a class="read-more" href="#">read more</a>
 							</div>
 							<div class="man">
-								<img src="web/images/device.png" class="img-responsive" alt="" />
+								<img src="{{ STATIC_URL }}images/device.png" class="img-responsive" alt="" />
 							</div>
 								<div class="clearfix"></div>
 				</article>
-				<article style="position: absolute; width: 100%; opacity: 0;"> 
+				<article style="position: absolute; width: 100%; opacity: 0;">
 							<div class="data">
 								 <h4>Lorem ipsum llc</h4>
-								<p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p> 
+								<p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 								<a class="read-more" href="#">read more</a>
 							</div>
 							<div class="man">
-								<img src="web/images/device1.jpg" class="img-responsive" alt="" />
+								<img src="{{ STATIC_URL }}images/device1.jpg" class="img-responsive" alt="" />
 							</div>
 								<div class="clearfix"></div>
 				</article>
@@ -184,11 +138,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		  </div>
 		  </div>
 		  <!-- script -->
-          <script src="web/js/jquery.wmuSlider.js"></script> 
+          <script src="{{ STATIC_URL }}js/jquery.wmuSlider.js"></script>
 			<script>
-       			$('.example1').wmuSlider();         
+       			$('.example1').wmuSlider();
    		    </script>
-			<!-- script -->	
+			<!-- script -->
 		</div>
 	</div>
 	<!-- ourteam -->
@@ -201,7 +155,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li>
 							<div class="team1">
 								<a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-								<img src="web/images/man.jpg" class="img-responsive" alt="" />
+								<img src="{{ STATIC_URL }}images/man.jpg" class="img-responsive" alt="" />
 								<div class="b-wrapper"><h5 class="b-animate b-from-left    b-delay03 "><i class="fff"> </i></h5>
 								<p class="b-animate b-from-right    b-delay03 "></p></div></a>
 								<h4>Bruce wayne</h4>
@@ -211,7 +165,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li>
 							<div class="team1">
 								<a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-								<img src="web/images/man1.jpg" class="img-responsive" alt="" />
+								<img src="{{ STATIC_URL }}images/man1.jpg" class="img-responsive" alt="" />
 								<div class="b-wrapper"><h5 class="b-animate b-from-left    b-delay03 "><i class="fff"> </i></h5>
 								<p class="b-animate b-from-right    b-delay03 "></p></div></a>
 								<h4>Tony Stark</h4>
@@ -221,7 +175,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li>
 							<div class="team1">
 								<a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-								<img src="web/images/man2.jpg" class="img-responsive" alt="" />
+								<img src="{{ STATIC_URL }}images/man2.jpg" class="img-responsive" alt="" />
 								<div class="b-wrapper"><h5 class="b-animate b-from-left    b-delay03 "><i class="fff"> </i></h5>
 								<p class="b-animate b-from-right    b-delay03 "></p></div></a>
 								<h4>Selina Kyle</h4>
@@ -231,7 +185,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li>
 							<div class="team1">
 								<a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-								<img src="web/images/man.jpg" class="img-responsive" alt="" />
+								<img src="{{ STATIC_URL }}images/man.jpg" class="img-responsive" alt="" />
 								<div class="b-wrapper"><h5 class="b-animate b-from-left    b-delay03 "><i class="fff"> </i></h5>
 								<p class="b-animate b-from-right    b-delay03 "></p></div></a>
 								<h4>Bruce wayne</h4>
@@ -241,7 +195,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li>
 							<div class="team1">
 								<a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-								<img src="web/images/man1.jpg" class="img-responsive" alt="" />
+								<img src="{{ STATIC_URL }}images/man1.jpg" class="img-responsive" alt="" />
 								<div class="b-wrapper"><h5 class="b-animate b-from-left    b-delay03 "><i class="fff"> </i></h5>
 								<p class="b-animate b-from-right    b-delay03 "></p></div></a>
 								<h4>Tony Stark</h4>
@@ -252,33 +206,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				 <script type="text/javascript">
 					$(window).load(function() {
-						
+
 						$("#flexiselDemo3").flexisel({
 							visibleItems: 3,
 							animationSpeed: 1000,
 							autoPlay: true,
-							autoPlaySpeed: 3000,    		
+							autoPlaySpeed: 3000,
 							pauseOnHover: true,
 							enableResponsiveBreakpoints: true,
-							responsiveBreakpoints: { 
-								portrait: { 
+							responsiveBreakpoints: {
+								portrait: {
 									changePoint:480,
 									visibleItems: 1
-								}, 
-								landscape: { 
+								},
+								landscape: {
 									changePoint:640,
 									visibleItems: 2
 								},
-								tablet: { 
+								tablet: {
 									changePoint:768,
 									visibleItems: 3
 								}
 							}
 						});
-						
+
 					});
 				    </script>
-				    <script type="text/javascript" src="web/js/jquery.flexisel.js"></script>
+				    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.flexisel.js"></script>
 		</div>
 	</div>
 <!-- ourteam -->
@@ -291,7 +245,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<form>
 						<input type="text" class="text" value="NAME" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'NAME';}">
 						<input type="text" class="text" value="EMAIL" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'EMAIL';}">
-						<textarea value="MESSAGE:" onfocus="if(this.value == 'MESSAGE') this.value='';" onblur="if(this.value == '') this.value='MESSAGE';">MESSAGE</textarea>		
+						<textarea value="MESSAGE:" onfocus="if(this.value == 'MESSAGE') this.value='';" onblur="if(this.value == '') this.value='MESSAGE';">MESSAGE</textarea>
 					</form>
 				</div>
 				<div class="col-md-4 info">
@@ -321,7 +275,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="data1">
 						<h5><a href="contact@gmail.com">contact@gmail.com</a></h5>
 					</div>
-						<div class="clearfix"></div>	
+						<div class="clearfix"></div>
 				</div>
 					<div class="clearfix"></div>
 		</div>
@@ -346,33 +300,4 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 <!-- keep in touch -->
-<!-- footer -->
-<div class="footer">
-		<div class="container">
-		<div class="col-md-4">
-			<p>Template by <a href="http://w3layouts.com" target="_blank"> w3layouts</a></p>
-		</div>
-		<div class="col-md-4 policy">
-			<ul>
-					<li><a href="#">Privacy Policy</li></a>
-					<li><a href="#">Terms of Use</li></a>
-					<li><a href="#">FAQs</li></a>
-					<div class="clearfix"></div>
-				</ul>
-		</div>
-			<div class="col-md-4 social">
-				<ul>
-					<li><a href="#"><i class="fb"> </i></li></a>
-					<li><a href="#"><i class="twt"> </i></li></a>
-					<li><a href="#"><i class="goog"> </i></li></a>
-					<li><a href="#"><i class="in"> </i></li></a>
-					<li><a href="#"><i class="pp"> </i></li></a>
-					<div class="clearfix"></div>
-				</ul>
-			</div>
-				<div class="clearfix"></div>
-		</div>
-	</div>
-<!-- footer -->
-</body>
-</html>
+{% endblock %}

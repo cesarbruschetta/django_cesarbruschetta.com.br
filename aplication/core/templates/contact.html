@@ -8,41 +8,41 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <title>Aluspisan a Bootstarp  Website Template | Home :: w3layouts</title>
-<link href="web/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-<link href="web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<link href="{{ STATIC_URL }}css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,700,300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="web/css/flexslider.css" type="text/css" media="screen" />
-<script src="web/js/jquery.min.js"></script>	
+<link rel="stylesheet" href="{{ STATIC_URL }}css/flexslider.css" type="text/css" media="screen" />
+<script src="{{ STATIC_URL }}js/jquery.min.js"></script>
 <!---css-style-switecher----->
-		<script type="text/javascript" src="web/js/jsapi"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/jsapi"></script>
 		<script>
 		google.setOnLoadCallback(function()
 			{
 			    // Color changer
 			    $(".colorblue").click(function(){
-			        $("link").attr("href", "web/css/blue.css");
+			        $("link").attr("href", "{{ STATIC_URL }}css/blue.css");
 			        return false;
 			    });
-			    
+
 			    $(".colorgreen").click(function(){
-			        $("link").attr("href", "web/css/green.css");
+			        $("link").attr("href", "{{ STATIC_URL }}css/green.css");
 			        return false;
 			    });
-			    
+
 			    $(".coloryellow").click(function(){
-			        $("link").attr("href", "web/css/yellow.css");
+			        $("link").attr("href", "{{ STATIC_URL }}css/yellow.css");
 			        return false;
 			    });
-			
+
 			});
 		</script>
 		<!---//End-css-style-switecher----->
- <link rel="stylesheet" href="web/css/swipebox.css">
+ <link rel="stylesheet" href="{{ STATIC_URL }}css/swipebox.css">
  <!------ Light Box ------>
-    <script src="web/js/jquery.swipebox.min.js"></script> 
+    <script src="{{ STATIC_URL }}js/jquery.swipebox.min.js"></script>
     <script type="text/javascript">
 		jQuery(function($) {
 			$(".swipebox").swipebox();
@@ -55,7 +55,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="banner1">
 	<div class="container">
 		<div class="logo">
-			<a href="index.html"><img src="web/images/logo.png" alt="" /></a>
+			<a href="index.html"><img src="{{ STATIC_URL }}images/logo.png" alt="" /></a>
 		</div>
 		<div class="head-nav">
 			<span class="menu"> </span>
@@ -77,9 +77,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						  });
 						});
 					</script>
-				<!-- script-for-nav -->		
-				<div class="clearfix"> </div>	
-			<h1>contact</h1>	
+				<!-- script-for-nav -->
+				<div class="clearfix"> </div>
+			<h1>contact</h1>
 	</div>
 </div>
 <!-- header -->
@@ -104,15 +104,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<form>
 								<div>
 									<span>Name</span>
-									<input type="text"> 
+									<input type="text">
 								</div>
 								<div>
 									<span>Email</span>
-									<input type="text"> 
+									<input type="text">
 								</div>
 								<div>
 									<span>Subject</span>
-									<input type="text"> 
+									<input type="text">
 								</div>
 								<div>
 									<span>Message</span>

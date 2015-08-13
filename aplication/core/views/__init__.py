@@ -3,6 +3,8 @@ from django.shortcuts import render
 
 # Create your views here.
 
+from .portfolio import portfolio
+
 
 def home(request):
     context = {

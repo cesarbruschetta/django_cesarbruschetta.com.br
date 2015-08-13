@@ -20,6 +20,7 @@ nfp/
 media/
 static/
 .DS_Store
+__pycache__
 
 #
 custom_settings.py

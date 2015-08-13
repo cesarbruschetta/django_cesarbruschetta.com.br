@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Aluspisan a Bootstarp  Website Template | Home :: w3layouts</title>
+        <title>Cesar Augusto Bruschetta | {{ title_page }}</title>
 
     {% block metas %}
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -20,7 +20,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </head>
     <body>
         <!-- header -->
-        <div class="banner">
+        <div class="banner{% if request.get_full_path not in '/,/core/' %}1{% endif %}">
             <div class="container">
                 <div class="logo">
                     <a href="index.html"><img src="{{ STATIC_URL }}images/logo.png" alt="" /></a>
@@ -28,10 +28,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="head-nav">
                     <span class="menu"> </span>
                     <ul>
-                        <li class="active"><a href="index.html">home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li {% if request.get_full_path in '/,/core/' %}class="active"{% endif %}>
+                            <a href="{% url 'home' %}">home</a></li>
+                        <li {% url 'about' as about %}{% if request.get_full_path == about %}class="active"{% endif %}>
+                            <a href="{{ about }}">Sobre Mim</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">portfolio</a></li>
+                        <li><a href="portfolio.html">pormetfolio</a></li>
                         <li><a href="blog.html">blog</a></li>
                         <li><a href="contact.html">contact</a></li>
                         <div class="clearfix"> </div>

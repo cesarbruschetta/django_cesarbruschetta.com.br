@@ -18,3 +18,10 @@ def about(request):
         'title_page': 'Quem Sou Eu'
     }
     return render(request, 'about.html', context)
+
+
+def services(request):
+    context = {
+        'title_page': 'Meus Serviços'
+    }
+    return render(request, 'services.html', context)

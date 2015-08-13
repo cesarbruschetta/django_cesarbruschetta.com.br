@@ -1,99 +1,54 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>Aluspisan a Bootstarp  Website Template | Home :: w3layouts</title>
-<link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-<link href="{{ STATIC_URL }}css/style.css" rel="stylesheet" type="text/css" media="all" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,700,300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="{{ STATIC_URL }}css/flexslider.css" type="text/css" media="screen" />
-<script src="{{ STATIC_URL }}js/jquery.min.js"></script>
-</head>
-<body>
-<!-- header -->
-<div class="banner1">
+{% extends 'base/base.html' %}
+{% block banner_title %}
+	<h1>Serviços</h1>
+{% endblock %}
+
+{% block content %}
+
+<!-- services-section -->
+<div class="services-top-grids">
 	<div class="container">
-		<div class="logo">
-			<a href="index.html"><img src="{{ STATIC_URL }}images/logo.png" alt="" /></a>
+		<div class="services-wel wel-head text-center">
+			<h3><span>our</span> Services </h3>
+			<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
 		</div>
-		<div class="head-nav">
-			<span class="menu"> </span>
-				<ul>
-					<li><a href="index.html">home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li class="active"><a href="services.html">Services</a></li>
-					<li><a href="portfolio.html">portfolio</a></li>
-					<li><a href="blog.html">blog</a></li>
-					<li><a href="contact.html">contact</a></li>
-						<div class="clearfix"> </div>
-				</ul>
+		<!---- services-grids ---->
+		<div class="service-grids">
+			<div class="col-md-4 service-grid">
+				<img src="{{ STATIC_URL }}images/device3.jpg" class="img-responsive" alt="" />
+				<h3>Service Name</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisl turpis, aliquet mattis eros eu, ullamcorper tempus odio. Praesent vel mauris tincidunt felis varius feugiat eget non risus.</p>
+			</div>
+			<div class="col-md-4 service-grid">
+				<img src="{{ STATIC_URL }}images/device3.jpg" class="img-responsive" alt="" />
+				<h3>Service Name</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisl turpis, aliquet mattis eros eu, ullamcorper tempus odio. Praesent vel mauris tincidunt felis varius feugiat eget non risus.</p>
+			</div>
+			<div class="col-md-4 service-grid">
+				<img src="{{ STATIC_URL }}images/device3.jpg" class="img-responsive" alt="" />
+				<h3>Service Name</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisl turpis, aliquet mattis eros eu, ullamcorper tempus odio. Praesent vel mauris tincidunt felis varius feugiat eget non risus.</p>
+			</div>
+			<div class="col-md-4 service-grid">
+				<img src="{{ STATIC_URL }}images/device3.jpg" class="img-responsive" alt="" />
+				<h3>Service Name</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisl turpis, aliquet mattis eros eu, ullamcorper tempus odio. Praesent vel mauris tincidunt felis varius feugiat eget non risus.</p>
+			</div>
+			<div class="col-md-4 service-grid">
+				<img src="{{ STATIC_URL }}images/device3.jpg" class="img-responsive" alt="" />
+				<h3>Service Name</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisl turpis, aliquet mattis eros eu, ullamcorper tempus odio. Praesent vel mauris tincidunt felis varius feugiat eget non risus.</p>
+			</div>
+			<div class="col-md-4 service-grid">
+				<img src="{{ STATIC_URL }}images/device3.jpg" class="img-responsive" alt="" />
+				<h3>Service Name</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisl turpis, aliquet mattis eros eu, ullamcorper tempus odio. Praesent vel mauris tincidunt felis varius feugiat eget non risus.</p>
+			</div>
+			<div class="clearfix"> </div>
+			<a class="viewmore-s" href="#">Viewall</a>
 		</div>
-		<!-- script-for-nav -->
-					<script>
-						$( "span.menu" ).click(function() {
-						  $( ".head-nav ul" ).slideToggle(300, function() {
-							// Animation complete.
-						  });
-						});
-					</script>
-				<!-- script-for-nav -->
-				<div class="clearfix"> </div>
-			<h1>services</h1>
 	</div>
 </div>
-<!-- header -->
-<!-- services-section -->
-		<div class="services-top-grids">
-			<div class="container">
-				<div class="services-wel wel-head text-center">
-					<h3><span>our</span> Services </h3>
-					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-				</div>
-				<!---- services-grids ---->
-				<div class="service-grids">
-					<div class="col-md-4 service-grid">
-						<img src="{{ STATIC_URL }}images/device3.jpg" class="img-responsive" alt="" />
-						<h3>Service Name</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisl turpis, aliquet mattis eros eu, ullamcorper tempus odio. Praesent vel mauris tincidunt felis varius feugiat eget non risus.</p>
-					</div>
-					<div class="col-md-4 service-grid">
-						<img src="{{ STATIC_URL }}images/device3.jpg" class="img-responsive" alt="" />
-						<h3>Service Name</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisl turpis, aliquet mattis eros eu, ullamcorper tempus odio. Praesent vel mauris tincidunt felis varius feugiat eget non risus.</p>
-					</div>
-					<div class="col-md-4 service-grid">
-						<img src="{{ STATIC_URL }}images/device3.jpg" class="img-responsive" alt="" />
-						<h3>Service Name</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisl turpis, aliquet mattis eros eu, ullamcorper tempus odio. Praesent vel mauris tincidunt felis varius feugiat eget non risus.</p>
-					</div>
-					<div class="col-md-4 service-grid">
-						<img src="{{ STATIC_URL }}images/device3.jpg" class="img-responsive" alt="" />
-						<h3>Service Name</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisl turpis, aliquet mattis eros eu, ullamcorper tempus odio. Praesent vel mauris tincidunt felis varius feugiat eget non risus.</p>
-					</div>
-					<div class="col-md-4 service-grid">
-						<img src="{{ STATIC_URL }}images/device3.jpg" class="img-responsive" alt="" />
-						<h3>Service Name</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisl turpis, aliquet mattis eros eu, ullamcorper tempus odio. Praesent vel mauris tincidunt felis varius feugiat eget non risus.</p>
-					</div>
-					<div class="col-md-4 service-grid">
-						<img src="{{ STATIC_URL }}images/device3.jpg" class="img-responsive" alt="" />
-						<h3>Service Name</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisl turpis, aliquet mattis eros eu, ullamcorper tempus odio. Praesent vel mauris tincidunt felis varius feugiat eget non risus.</p>
-					</div>
-					<div class="clearfix"> </div>
-					<a class="viewmore-s" href="#">Viewall</a>
-				</div>
-				</div>
-				</div>
 <!-- services-section  -->
 <div class="case-studies">
 <div class="container">
@@ -297,52 +252,4 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 <!-- contactus -->
-<!-- keep in touch -->
-	<div class="keep">
-		<div class="container">
-			<h3>keep in touch.</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-					<div class="col-md-7 text-field-email">
-						<form>
-							<input type="text" class="text" value="E-mail address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail address ';}">
-						</form>
-					</div>
-					<div class="col-md-5 button1">
-						<form>
-							<input type="submit" value="subscribe">
-						</form>
-					</div>
-						<div class="clearfix"> </div>
-		</div>
-	</div>
-<!-- keep in touch -->
-<!-- footer -->
-<div class="footer">
-		<div class="container">
-		<div class="col-md-4">
-			<p>Template by <a href="http://w3layouts.com" target="_blank"> w3layouts</a></p>
-		</div>
-		<div class="col-md-4 policy">
-			<ul>
-					<li><a href="#">Privacy Policy</li></a>
-					<li><a href="#">Terms of Use</li></a>
-					<li><a href="#">FAQs</li></a>
-					<div class="clearfix"></div>
-				</ul>
-		</div>
-			<div class="col-md-4 social">
-				<ul>
-					<li><a href="#"><i class="fb"> </i></li></a>
-					<li><a href="#"><i class="twt"> </i></li></a>
-					<li><a href="#"><i class="goog"> </i></li></a>
-					<li><a href="#"><i class="in"> </i></li></a>
-					<li><a href="#"><i class="pp"> </i></li></a>
-					<div class="clearfix"></div>
-				</ul>
-			</div>
-				<div class="clearfix"></div>
-		</div>
-	</div>
-<!-- footer -->
-</body>
-</html>
+{% endblock %}

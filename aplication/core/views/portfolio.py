@@ -82,7 +82,7 @@ def portfolio(request):
         },
         {
             'url': '/Sites/Jogos_Flash',
-            'image': 'http://cab.cesarbruschetta.com.br/banco-de-imagens/site15.png/image_thumb1',
+            'image': 'http://cab.cesarbruschetta.com.br/banco-de-imagens/site15.png/image_thumb',
             'title': 'Jogos Flash'
         },
         {

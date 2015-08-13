@@ -32,7 +32,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <a href="{% url 'home' %}">home</a></li>
                         <li {% url 'about' as about %}{% if request.get_full_path == about %}class="active"{% endif %}>
                             <a href="{{ about }}">Sobre Mim</a></li>
-                        <li><a href="services.html">Services</a></li>
+                        <li {% url 'portfolio' as portfolio %}{% if request.get_full_path == portfolio %}class="active"{% endif %}>
+                            <a href="{{ portfolio }}">Portfólio</a></li>
+
+
                         <li><a href="portfolio.html">pormetfolio</a></li>
                         <li><a href="blog.html">blog</a></li>
                         <li><a href="contact.html">contact</a></li>

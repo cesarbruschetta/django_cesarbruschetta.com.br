@@ -1,10 +1,18 @@
 # -*- encoding: utf-8 -*-
 
 from django.db import models
-from django.template.defaultfilters import slugify
+
+from datetime import datetime
+
+from aplication.core.utils.models import *
 
 
 class FeedModels(models.Model):
+
+    class Meta:
+        verbose_name = u'Feed RSS'
+        verbose_name_plural = u'Feeds RSS'
+        ordering = ('title')
 
     ACTIVE = 1
     INACTIVE = 0
@@ -26,16 +34,25 @@ class FeedModels(models.Model):
 
 class NewsFeedModels(models.Model):
 
-    feed = models.ForeignKey('news_feed.FeedModels')
-    title = models.CharField(verbose_name="Titulo",
-                             default="", max_length=255)
-    slug = models.SlugField(default='', blank=True, null=True)
-    content = models.TextField(verbose_name=u'Conteudo', default='')
-    created = models.DateTimeField(auto_now=True, blank=True)
+    u'''
+        Modelo que representa uma noticia, a mesma está vinculada a um rss
+    '''
+    class Meta:
+        verbose_name = u'Notícia'
+        verbose_name_plural = u'Notícias'
+        ordering = ('-created')
 
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
-        super(NewsFeedModels, self).save(*args, **kwargs)
+    feed = models.ForeignKey('news_feed.FeedModels')
+    title = models.CharField(verbose_name="Titulo", **CHARN)
+    description = models.TextField(u"Subtítulo da notícia", default='')
+    content = models.TextField(verbose_name=u'Conteudo', default='')
+
+    category = models.CharField(**CHARN)
+    slug = models.SlugField(default='', unique=True, max_length=255)
+    link = models.CharField(**CHARN)
+    imagem = models.ImageField(upload_to='', **NULL)
+
+    created = models.DateTimeField(default=datetime.now)
 
     def __unicode__(self):
         return '%s : %s - %s' % (self.feed.title, self.title,

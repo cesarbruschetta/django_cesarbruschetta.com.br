@@ -10,18 +10,18 @@ def home(request):
     context = {
         'title_page': 'Home'
     }
-    return render(request, 'index.html', context)
+    return render(request, 'core/index.html', context)
 
 
 def about(request):
     context = {
         'title_page': 'Quem Sou Eu'
     }
-    return render(request, 'about.html', context)
+    return render(request, 'core/about.html', context)
 
 
 def services(request):
     context = {
         'title_page': 'Meus Serviços'
     }
-    return render(request, 'services.html', context)
+    return render(request, 'core/services.html', context)

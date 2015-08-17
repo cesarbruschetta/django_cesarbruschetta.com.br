@@ -1,12 +1,16 @@
-{% extends 'base/base.html' %}
+{% extends 'core/base/base.html' %}
 {% block banner_title %}
-	<h1>Meu Portfólio</h1>
+	<h1>Portfólio</h1>
 {% endblock %}
 
 {% block content %}
 
 <!-- portfolio-section -->
 <div class="portfolio">
+	<div class="services-wel wel-head text-center">
+		<h3><span>Meu</span> Portifólio </h3>
+		<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+	</div>
 	<div id="portfoliolist">
 
 		{% for item in portfolio_items %}
@@ -19,11 +23,7 @@
                 </div>
 			</div>
 		{% endfor %}
-
 		<div class="clearfix"></div>
-	</div>
-	<div class="portfolio-botton">
-		<input type="button" value="Our Portfolio">
 	</div>
     <div class="clearfix"></div>
 </div>

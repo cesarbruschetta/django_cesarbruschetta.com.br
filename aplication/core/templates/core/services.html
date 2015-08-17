@@ -1,0 +1,60 @@
+{% extends 'core/base/base.html' %}
+{% block banner_title %}
+	<h1>Serviços</h1>
+{% endblock %}
+
+{% block content %}
+
+<!-- services-section -->
+<div class="services-top-grids">
+	<div class="container">
+		<div class="services-wel wel-head text-center">
+			<h3><span>Meus</span> Serviços </h3>
+			<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+		</div>
+		<!---- services-grids ---->
+		<div class="service-grids">
+			<div class="col-md-4 service-grid">
+				<img src="{{ STATIC_URL }}core/images/pc.png" class="img-responsive" alt="" />
+				<h3>Montagem e Manutenção de Computadores</h3>
+				<p>Trabalhamos com montagem ou configuração de sua CPU, podendo escolher os componentes que serão colocados no seu PC, assim deixando a maquina na medida certa ao trabalho que ela ira realizar, trabalhamos com o concerto e substituição de peças, instalação e configuração de sistema operacional e recuperação de dados no HD.</p>
+			</div>
+			<div class="col-md-4 service-grid">
+				<img src="{{ STATIC_URL }}core/images/servidor.png" class="img-responsive" alt="" />
+				<h3>Montagem e configuração de rede</h3>
+				<p>Trabalhamos com montagem e configuração de rede de computadores, montando na sua empresa ou casa dês de uma rede wireless na sua casa, a uma rede corporativa com servidores e toda infra-estrutura para sua empresa tenha uma rede estável e rápida, atendendo as necessidades de sua empresa. Configuramos servidores com Windows ou Linux dependendo das suas necessidades.</p>
+			</div>
+			<div class="col-md-4 service-grid">
+				<img src="{{ STATIC_URL }}core/images/device3.jpg" class="img-responsive" alt="" />
+				<h3>Criação de web sites</h3>
+				<p>Trabalhamos com criação, manutenção, hospedou e registrou seu domínio de web sites, criamos sites usando as mais novas técnicas e ferramentas para desenvolver um site bonito e funcional, facilitando o acesso aos sites de buscas como o Google. Em nossos sites utilizamos vários recursos como Ajax, flash , PHP, ASP, animações em JS, e vários recursos do programas do Pacote Abobe CS4 (Dreamweaver CS4, Flash CS 4, Firewoks CS 4, Photoshop CS 4) e Corel Draw X4.</p>
+				<p>Para ver alguns exemplos dos meus trabalhos já realizados, <a href="{% url 'portfolio' %}">acesse o portfólio</a>.</p>
+			</div>
+			<div class="col-md-4 service-grid">
+				<img src="{{ STATIC_URL }}core/images/email.png" class="img-responsive" alt="" />
+				<h3>Criação de E-mail Marketing</h3>
+				<p>Trabalhamos com criação e envio de email marketing, pois hoje em dia o e-mail marketing tem se mostrado uma importante ferramenta para a publicidade das empresas e produtos, O email marketing é uma ferramenta importantíssima para o empreendedor na geração de tráfego e, principalmente, no relacionamento com os clientes. Criar e enviar uma email newsletter pode alavancar o sucesso de um negócio na Internet.</p>
+				<p>Suas principais características: <br />
+					<ul >
+						<li>
+							Agilidade: O e-mail é uma ferramenta ágil tanto no envio quanto na resposta e avaliação do retorno. Um simples clique na tecle “send” do software dispara o envio de milhares de e-mails que em segundos estão na caixa postal do destinatário. A resposta ao email marketing normalmente é imediata através da ação desejada ou simplesmente da confirmação de recebimento.
+						</li>
+						<li>
+							Mensurabilidade: É muito fácil medir o retorno do email marketing. As estatísticas de seu site vão lhe indicar: quantas pessoas receberam, quantas clicaram em um link, visitaram o site, compraram; quantas não desejam mais receber sua comunicação e solicitam a exclusão da lista, e diversas outras informações.
+						</li>
+						<li>
+							Interatividade: Um simples link no e-mail possibilita ao destinatário realizar uma ação como retornar uma resposta, visitar um site ou solicitar a sua exclusão da lista.
+						</li>
+						<li >
+							Alta Taxa de Resposta: Campanhas de email marketing sérias, com comunicação enviada para destinatários que autorizaram o recebimento (opt-in) tem altíssimos índices de retorno.
+						</li>
+					</ul>
+				</p>
+			</div>
+			<div class="clearfix"> </div>
+			<a class="viewmore-s" href="{% url 'portfolio' %}">Meu Portfólio</a>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

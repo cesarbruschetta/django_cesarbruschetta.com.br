@@ -42,6 +42,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django_extensions',
     'gunicorn',
+    'database_files'
+    'aplication.core',
+    'aplication.news_feed',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -62,6 +65,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(PROJECT_DIR, "core/templates"),
+            os.path.join(PROJECT_DIR, "news_feed/templates"),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -78,6 +82,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'aplication.wsgi.application'
 
+# UPLOAD DE FILES
+DEFAULT_FILE_STORAGE = 'database_files.storage.DatabaseStorage'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases

@@ -147,4 +147,4 @@ def portfolio(request):
         },
     ]
 
-    return render(request, 'portfolio.html', context)
+    return render(request, 'core/portfolio.html', context)

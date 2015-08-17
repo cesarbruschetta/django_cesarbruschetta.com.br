@@ -14,7 +14,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     {% endblock %}
     {% block styles %}
-        {% include 'base/styles.html' %}
+        {% include 'core/base/styles.html' %}
     {% endblock %}
 
     </head>
@@ -23,7 +23,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="banner{% if request.get_full_path not in '/,/core/' %}1{% endif %}">
             <div class="container">
                 <div class="logo">
-                    <a href="index.html"><img src="{{ STATIC_URL }}images/logo.png" alt="" /></a>
+                    <a href="index.html"><img src="{{ STATIC_URL }}core/images/logo.png" alt="" /></a>
                 </div>
                 <div class="head-nav">
                     <span class="menu"> </span>
@@ -32,12 +32,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <a href="{% url 'home' %}">home</a></li>
                         <li {% url 'about' as about %}{% if request.get_full_path == about %}class="active"{% endif %}>
                             <a href="{{ about }}">Sobre Mim</a></li>
+                        <li {% url 'services' as services %}{% if request.get_full_path == services %}class="active"{% endif %}>
+                            <a href="{{ services }}">Serviços</a>
                         <li {% url 'portfolio' as portfolio %}{% if request.get_full_path == portfolio %}class="active"{% endif %}>
                             <a href="{{ portfolio }}">Portfólio</a></li>
+                        <li {% url 'blog_home' as blog_home %}{% if request.get_full_path == blog_home %}class="active"{% endif %}>
+                            <a href="{{ blog_home }}">Blog</a></li>
 
 
-                        <li><a href="portfolio.html">pormetfolio</a></li>
-                        <li><a href="blog.html">blog</a></li>
                         <li><a href="contact.html">contact</a></li>
                         <div class="clearfix"> </div>
                     </ul>
@@ -86,7 +88,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
         <!-- footer -->
         {% block scripts %}
-            {% include 'base/scripts.html' %}
+            {% include 'core/base/scripts.html' %}
         {% endblock %}
     </body>
 </html>

@@ -4,8 +4,14 @@ from django.shortcuts import render
 
 
 def blog_home(request):
-    pass
+    context = {
+        'title_page': 'Blog'
+    }
+    return render(request, 'news_feed/blog.html', context)
 
 
 def post_blog(request, slug):
-    pass
+    context = {
+        'title_page': 'Home'
+    }
+    return render(request, 'news_feed/single.html', context)

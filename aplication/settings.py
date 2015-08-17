@@ -42,7 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django_extensions',
     'gunicorn',
-    'database_files'
+    'database_files',
     'aplication.core',
     'aplication.news_feed',
 )

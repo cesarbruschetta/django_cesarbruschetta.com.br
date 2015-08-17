@@ -7,3 +7,8 @@ python-memcached==1.57
 requests==2.7.0
 simplejson==3.8.0
 six==1.9.0
+
+beautifulsoup4
+Pillow
+feedparser
+python-dateutil

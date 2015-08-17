@@ -12,7 +12,7 @@ class FeedModels(models.Model):
     class Meta:
         verbose_name = u'Feed RSS'
         verbose_name_plural = u'Feeds RSS'
-        ordering = ('title')
+        ordering = ('title',)
 
     ACTIVE = 1
     INACTIVE = 0
@@ -40,7 +40,7 @@ class NewsFeedModels(models.Model):
     class Meta:
         verbose_name = u'Notícia'
         verbose_name_plural = u'Notícias'
-        ordering = ('-created')
+        ordering = ('-created',)
 
     feed = models.ForeignKey('news_feed.FeedModels')
     title = models.CharField(verbose_name="Titulo", **CHARN)

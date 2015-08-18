@@ -54,6 +54,6 @@ class NewsFeedModels(models.Model):
 
     created = models.DateTimeField(default=datetime.now)
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s : %s - %s' % (self.feed.title, self.title,
                                  self.created.strftime('%d/%m/%Y %H:%M'))

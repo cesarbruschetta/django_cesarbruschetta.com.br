@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime
-from time import mktime
-from BeautifulSoup import BeautifulSoup
-from HTMLParser import HTMLParser
+from bs4 import BeautifulSoup
+from html.parser import HTMLParser
+
 
 from .utils.html import strip_tags
-
-import sys
+from .utils.datetime import parse_str2datetime
 
 
 class RssFeedImporter(object):
@@ -32,7 +31,7 @@ class RssFeedImporter(object):
     @property
     def content(self):
         if self.has_content:
-            content = self.feed['content'][0]['value']
+            content = self.feed['content']['value']
         else:
             content = self.feed.get('summary', None)
 
@@ -56,15 +55,17 @@ class RssFeedImporter(object):
 
     @property
     def category(self):
-        tags = self.feed.get('tags', None)
-        if tags:
-            tags = [tag['term'] for tag in tags]
+        # tags = self.feed.get('tags', None)
+        # if tags:
+        #     tags = [tag['term'] for tag in tags]
 
-        return tags
+        # return tags
+        return ''
 
     @property
     def img(self):
         # pegamos todas, porém só uso a primeira, sempre
+
         imgs = self.feed.get('links', None)
         src = None
         if imgs:
@@ -72,25 +73,28 @@ class RssFeedImporter(object):
             if src:
                 src = src[0]
             else:
-                # buscamos a primeira tag de img no content
-                img_tag = BeautifulSoup(self.content).first('img')
-                if img_tag:
-                    # @todo: se for uma img estranha do feedburner tratar!yy
-                    src = dict(img_tag.attrs).get('src', None)
-        else:
-            img_tag = BeautifulSoup(HTMLParser()
-                                    .unescape(self.content)
-                                    ).first('img')
+                src = None
+
+        if not src:
+            # buscamos a primeira tag de img no content
+            try:
+                img_tag = BeautifulSoup(HTMLParser()
+                                        .unescape(self.content)
+                                        ).first('img')
+            except:
+                img_tag = None
+
             if img_tag:
                 # @todo: se for uma img estranha do feedburner tratar!yy
                 src = dict(img_tag.attrs).get('src', None)
+
         return src
 
     @property
     def has_content(self):
         # se gerar um KeyError eu sei que não existe, não achei outra forma
         try:
-            self.feed['content'][0]['value']
+            self.feed['content_detail']['value']
             to_return = True
         except KeyError:
             to_return = False
@@ -99,9 +103,13 @@ class RssFeedImporter(object):
 
     @property
     def date(self):
-        try:
-            date = self.feed.published_parsed
-        except AttributeError:
-            date = self.feed.updated_parsed
 
-        return datetime.fromtimestamp(mktime(date))
+        try:
+            str_date = self.feed.published_parsed
+        except AttributeError:
+            str_date = self.feed.updated_parsed
+
+        try:
+            return parse_str2datetime(str_date)
+        except:
+            return datetime.now()

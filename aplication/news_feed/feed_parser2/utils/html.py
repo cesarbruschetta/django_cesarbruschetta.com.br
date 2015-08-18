@@ -7,8 +7,8 @@ from django.conf import settings
 from django.template import loader
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
-from BeautifulSoup import BeautifulSoup, Comment
-from HTMLParser import HTMLParser
+from bs4 import BeautifulSoup, Comment
+from html.parser import HTMLParser
 
 
 def render_to_file(filename, template, context, path='rendered'):
@@ -35,8 +35,16 @@ def strip_tags(text, valid_tags={}):
     for tag in soup.findAll(True):
         if tag.name in valid_tags:
             valid_attrs = valid_tags[tag.name]
-            tag.attrs = [(attr, val.replace('javascript:', ''))
-                         for attr, val in tag.attrs if attr in valid_attrs]
+            # tag.attrs = [(attr, val.replace('javascript:', ''))
+            #              for attr, val in tag.attrs if attr in valid_attrs]
+
+            attrs = {}
+            for attr, val in tag.attrs.items():
+                if attr in valid_attrs:
+                    attrs[attr] = val.replace('javascript:', '')
+
+            tag.attrs = attrs
+
         else:
             tag.hidden = True
     return soup.renderContents().decode('utf8')

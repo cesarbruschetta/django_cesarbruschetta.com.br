@@ -2,23 +2,23 @@
 
 import feedparser
 from hashlib import md5
-from datetime import datetime
-from urllib2 import urlopen
+from urllib.request import urlopen
 
-from django.utils import simplejson, timezone
 from django.template.defaultfilters import slugify
+# import json as simplejson
 
 from django.core.files.temp import NamedTemporaryFile
 from django.core.files.uploadedfile import InMemoryUploadedFile
 
 
-from aplication.core.models import NewsFeedModels, FeedModels
+from aplication.news_feed.models import NewsFeedModels, FeedModels
 
 
 from .utils.file import FileHandler
 from .rss_feed_importer import RssFeedImporter
 
 import logging
+
 logger = logging.getLogger(__name__)
 
 
@@ -27,6 +27,10 @@ class Parser(object):
     def __init__(self, id_feed=None, quantity=25):
         self.feed_list = self.get_feed_list(id_feed)
         self.quantity = quantity
+
+    def parse(self):
+        for feed in self.feed_list:
+            self.get_content(feed['url_feed'], feed['title'], feed['id'])
 
     def get_feed_list(self, id_feed=None):
         """
@@ -39,7 +43,9 @@ class Parser(object):
             # RETORNA UMA RSS ESPECIFICADA PELO ID
             try:
                 obj = FeedModels.objects.get(id=id_feed)
-                feeds = [{'title': obj.title, 'url_feed': obj.url_feed}]
+                feeds = [{'title': obj.title,
+                          'url_feed': obj.url_feed,
+                          'id': obj.id}]
             except:
                 logger.info('Feed nao encontrada no banco: id=%s' % (id_feed))
                 pass
@@ -47,13 +53,13 @@ class Parser(object):
             # RETORNA TODAS AS RSS ATIVAS NO BANCO DE DADOS
             feeds = FeedModels.objects\
                 .filter(status=FeedModels.ACTIVE)\
-                .values('url_feed', 'title')
+                .values('url_feed', 'title', 'id')
 
         return feeds
 
-    def get_content(self, url, title_rss):
-        print title_rss
-        print url
+    def get_content(self, url, feed_title, feed_id):
+        print(feed_title)
+        print(url)
 
         i = 0
         feeds = feedparser.parse(url)
@@ -68,12 +74,17 @@ class Parser(object):
             # já existe no banco? se sim passo para a proxima iteracao
             try:
                 news = NewsFeedModels.objects.get(slug=slug)
-
             except NewsFeedModels.DoesNotExist:
                 news = NewsFeedModels()
 
-            news.titulo = item.title
+            news.feed_id = feed_id
+            news.title = item.title
             news.slug = slug
+            news.content = item.content
+            news.description = item.description
+            news.created = item.date
+            news.link = item.link
+            # news.category = simplejson.dumps(item.category)
 
             if item.img:
                 try:
@@ -107,19 +118,7 @@ class Parser(object):
                     image_temp.seek(0)
                     news.imagem.save(image_name, image_file, save=True)
 
-            news.content = item.content
-            news.description = item.description
-            try:
-                news.created = item.date.replace(tzinfo=timezone.utc)
-            except:
-                news.created = datetime.utcnow().replace(tzinfo=timezone.utc)
-            news.link = item.link
-            news.category = simplejson.dumps(item.category)
             news.save()
 
             # contador para a quantidade limite imposta
             i = i + 1
-
-    def parse(self):
-        for feed in self.feed_list:
-            self.get_content(feed['url_feed'], feed['title'])

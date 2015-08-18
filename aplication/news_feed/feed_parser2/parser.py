@@ -101,11 +101,11 @@ class Parser(object):
                     image_name = FileHandler\
                         .generate_filename_based_on_url(item.img)
 
-                    image_name = md5(image_name).hexdigest()
+                    # image_name = md5(image_name.encode('utf-8')).hexdigest()
                     image_temp.write(image_content)
                     image_size = len(image_content)
                     http_message = image_response.info()
-                    content_type = http_message.type
+                    content_type = http_message.get_content_type()
                     image_file = InMemoryUploadedFile(
                         file=image_temp,
                         name=image_name,

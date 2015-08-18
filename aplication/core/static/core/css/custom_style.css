@@ -1,0 +1,25 @@
+
+.nbs-flexisel-nav-left,
+.nbs-flexisel-nav-right{
+    display: none;
+}
+
+
+.blog-artical-grid-pic{
+    min-height: 74px;
+}
+
+.artical-details-left{
+    min-height:140px;
+    text-align: justify;
+}
+
+.blog-artical-grid-pic-info-admin {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.blog-artical-grid-pic-info-admin-left img{
+    width: 60px;
+    height: 60px
+}

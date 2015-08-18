@@ -3,6 +3,7 @@
 from django.db import models
 
 from datetime import datetime
+import re
 
 from aplication.core.utils.models import *
 
@@ -27,9 +28,13 @@ class FeedModels(models.Model):
 
     title = models.CharField(verbose_name="Titulo",
                              default="", max_length=255)
-    description = models.TextField(verbose_name=u'Descrição', default='')
+    description = models.TextField(verbose_name=u'Descrição', **NULL)
+    logo = models.ImageField(upload_to='', default='')
     status = models.PositiveSmallIntegerField(choices=STATUS,
                                               default=ACTIVE)
+
+    def __str__(self):
+        return '%s - %s' % (self.title, self.url_feed)
 
 
 class NewsFeedModels(models.Model):
@@ -57,3 +62,7 @@ class NewsFeedModels(models.Model):
     def __str__(self):
         return '%s : %s - %s' % (self.feed.title, self.title,
                                  self.created.strftime('%d/%m/%Y %H:%M'))
+
+    def get_content(self):
+        p = re.compile(r'<img .*?>')
+        return p.sub('', self.content)

@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^files/', include('database_files.urls')),
     url(r'^core/', include('aplication.core.urls')),
     url(r'^blog/', include('aplication.news_feed.urls')),
 

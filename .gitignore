@@ -16,9 +16,8 @@ build
 
 # Logs:
 *.log
-nfp/
-media/
-static/
+./media/
+./static/
 .DS_Store
 __pycache__
 

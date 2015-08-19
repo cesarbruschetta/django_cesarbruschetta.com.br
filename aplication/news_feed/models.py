@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 from django.db import models
+from django.template.defaultfilters import slugify
 
 from datetime import datetime
 import re
@@ -30,11 +31,16 @@ class FeedModels(models.Model):
                              default="", max_length=255)
     description = models.TextField(verbose_name=u'Descrição', **NULL)
     logo = models.ImageField(upload_to='', default='')
+    slug = models.SlugField(default='', unique=True, max_length=255)
     status = models.PositiveSmallIntegerField(choices=STATUS,
                                               default=ACTIVE)
 
     def __str__(self):
         return '%s - %s' % (self.title, self.url_feed)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(FeedModels, self).save(*args, **kwargs)
 
 
 class NewsFeedModels(models.Model):

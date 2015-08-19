@@ -1,4 +1,5 @@
 {% extends 'core/base/base.html' %}
+{% load xpaginator %}
 {% block banner_title %}
 	<h1>Blog</h1>
 {% endblock %}
@@ -10,7 +11,7 @@
 		<div class="blog-left">
 			<div class="blog-left-head">
 				<span> </span>
-				<h3>Recent-posts</h3>
+				<h3>{{ sub_title_page }}</h3>
 			</div>
 			<div class="blog-artical-grids row">
 
@@ -36,13 +37,13 @@
 								<div class="blog-artical-grid-pic-info-admin-left">
 									<ul>
 										<li>
-											<a href="#">
+											<a href="{% url 'feed_blog' new.feed.slug %}">
 												<img src="{{ new.feed.logo.url }}" title="{{ new.feed.title }}"
 													 title="{{ new.feed.title }}">
 											</a>
 										</li>
 										<li>
-											<p>Escrito por <a href="#">{{ new.feed.title }}</a></p>
+											<p>Escrito por <a href="{% url 'feed_blog' new.feed.slug %}">{{ new.feed.title }}</a></p>
 										</li>
 									</ul>
 								</div>
@@ -81,47 +82,15 @@
 							</a>
 						</div>
 					</div><!-- //End-blog-artical-grid -->
+
 				{% endfor %}
 			</div>
 			<div class="clearfix"> </div>
 
-			<div class="blog-artical-pagenate">
-				<ul>
-					<li class="frist">
-				        {% if news.has_previous %}
-        					<a href="?page={{ news.previous_page_number }}">
-								<span class="fa fa-chevron-left"></span>
-        					</a>
-    					{% endif %}
-					</li>
-
-					{% for page_num in news.paginator.page_range %}
-						<li class="{% if page_num == news.number %}active{% endif %}" >
-							<a href="?page={{ page_num }}">{{ page_num }}</a>
-						</li>
-				  	{% endfor %}
-
-					<!--
-					<li class="more-art">
-						<a href="?page=11">
-							<span class="fa fa-angle-double-right"></span>
-						</a>
-					</li>
-					-->
-
-					<li class="last">
-						{% if news.has_next %}
-        					<a href="?page={{ news.next_page_number }}">
-        						<span class="fa fa-chevron-right"></span>
-        					</a>
-    					{% endif %}
-					</li>
-				</ul>
-			</div>
+			{% xpaginator pageURI total_item current 10 1 True 1 %}
+			{% include "news_feed/xpaginate.html" %}
 		</div>
 	</div>
 	<div class="clearfix"> </div>
 </div>
-
-
 {% endblock %}

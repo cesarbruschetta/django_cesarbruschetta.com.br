@@ -1,10 +1,9 @@
 # -*- encoding: utf-8 -*-
 from django.shortcuts import render
-from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.core.paginator import Paginator, EmptyPage, InvalidPage
 
 from aplication.news_feed.models import NewsFeedModels
-
-# Create your views here.
+from aplication.core.utils.url_gen import urlGen
 
 
 def blog_home(request):
@@ -12,25 +11,28 @@ def blog_home(request):
     news_list = NewsFeedModels.objects.all()
     news_paginator = Paginator(news_list, 10)
 
-    page = request.REQUEST.get('page', '1')
+    try:
+        page = int(request.REQUEST.get('page', '1'))
+    except ValueError:
+        page = 1
+
     try:
         news = news_paginator.page(page)
-    except PageNotAnInteger:
-        # If page is not an integer, deliver first page.
-        news = news_paginator.page(1)
-    except EmptyPage:
+    except (EmptyPage, InvalidPage):
         # If page is out of range (e.g. 9999), deliver last page of results.
         news = news_paginator.page(news_paginator.num_pages)
 
+    url = urlGen()
+    pageURI = url.generate('page', request.GET)
+    items = news_list.count()
+    # news = news.object_list
+
     context = {
         'title_page': 'Blog',
-        'news': news
+        'sub_title_page': 'Últimas Noticias',
+        'news': news,
+        'total_item': items,
+        'pageURI': pageURI,
+        'current': page,
     }
     return render(request, 'news_feed/blog.html', context)
-
-
-def post_blog(request, slug):
-    context = {
-        'title_page': 'Home'
-    }
-    return render(request, 'news_feed/single.html', context)

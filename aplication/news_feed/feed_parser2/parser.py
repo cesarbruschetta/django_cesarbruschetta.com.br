@@ -18,7 +18,6 @@ from .utils.file import FileHandler
 from .rss_feed_importer import RssFeedImporter
 
 import logging
-
 logger = logging.getLogger(__name__)
 
 

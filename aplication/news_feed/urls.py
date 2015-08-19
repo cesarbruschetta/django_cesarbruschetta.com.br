@@ -5,6 +5,5 @@ urlpatterns = patterns(
 
     # AJAX
     url(r'^/?$', 'blog_home', name='blog_home'),
-
-
+    url(r'^feed/(?P<slug>[-\w]+)/?$', 'posts_feed_blog', name='feed_blog'),
 )

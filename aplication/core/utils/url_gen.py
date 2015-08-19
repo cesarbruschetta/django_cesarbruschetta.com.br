@@ -57,10 +57,10 @@ class urlGen:
         if len(self.uri) == 0:
             try:
                 self.appendQuerystring(self.param)
-            except ExceptionError:
-                raise ExceptionError(
+            except Exception:
+                raise Exception(
                     'urlgen recieved an unexpected error adding %s param failed' % (
-                        params)
+                        param)
                 )
         else:
             for k, v in self.uri.items():

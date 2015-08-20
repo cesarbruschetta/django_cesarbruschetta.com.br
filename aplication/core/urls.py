@@ -8,5 +8,6 @@ urlpatterns = patterns(
     url(r'^quem-sou-eu/?$', 'about', name='about'),
     url(r'^meus-trabalhos/?$', 'portfolio', name='portfolio'),
     url(r'^servicos/?$', 'services', name='services'),
+    url(r'^contate-me/?$', 'contact', name='contact'),
 
 )

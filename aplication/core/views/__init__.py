@@ -25,3 +25,10 @@ def services(request):
         'title_page': 'Meus Serviços'
     }
     return render(request, 'core/services.html', context)
+
+
+def contact(request):
+    context = {
+        'title_page': 'Contate-me'
+    }
+    return render(request, 'core/contact.html', context)

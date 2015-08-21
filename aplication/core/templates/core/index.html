@@ -36,22 +36,7 @@
 		</div>
 	</section>
 
-	<!-- FlexSlider -->
-		  <script defer src="{{ STATIC_URL }}core/js/jquery.flexslider.js"></script>
-		  <script type="text/javascript">
-			$(function(){
-			  SyntaxHighlighter.all();
-			});
-			$(window).load(function(){
-			  $('.flexslider').flexslider({
-				animation: "slide",
-				start: function(slider){
-				  $('body').removeClass('loading');
-				}
-			  });
-			});
-		  </script>
-	<!-- FlexSlider -->
+
 {% endblock %}
 
 {% block content %}
@@ -137,11 +122,11 @@
                 </ul>
 		  </div>
 		  </div>
-		  <!-- script -->
+		  <!-- script
           <script src="{{ STATIC_URL }}core/js/jquery.wmuSlider.js"></script>
 			<script>
        			$('.example1').wmuSlider();
-   		    </script>
+   		    </script>-->
 			<!-- script -->
 		</div>
 	</div>
@@ -204,7 +189,7 @@
 					    </li>
 					 </ul>
 				</div>
-				 <script type="text/javascript">
+				 <!-- script type="text/javascript">
 					$(window).load(function() {
 
 						$("#flexiselDemo3").flexisel({
@@ -232,7 +217,7 @@
 
 					});
 				    </script>
-				    <script type="text/javascript" src="{{ STATIC_URL }}core/js/jquery.flexisel.js"></script>
+				    <script type="text/javascript" src="{{ STATIC_URL }}core/js/jquery.flexisel.js"></script -->
 		</div>
 	</div>
 <!-- ourteam -->

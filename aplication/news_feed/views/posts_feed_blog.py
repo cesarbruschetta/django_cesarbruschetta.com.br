@@ -8,7 +8,7 @@ from aplication.core.utils.url_gen import urlGen
 
 def posts_feed_blog(request, slug):
 
-    feed = get_object_or_404(FeedModels, slug=slug, status=FeedModels.ACTIVE)
+    feed = get_object_or_404(FeedModels, slug=slug)
     news_list = NewsFeedModels.objects.filter(feed=feed)
 
     news_paginator = Paginator(news_list, 10)

@@ -1,9 +1,16 @@
 
 
 <script type="text/javascript" src="{{ STATIC_URL }}core/js/jquery.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}core/js/bootstrap.min.js"></script>
+
+
 <script type="text/javascript" src="{{ STATIC_URL }}core/js/jquery.flexisel.js"></script>
+<script type="text/javascript" defer src="{{ STATIC_URL }}core/js/jquery.flexslider.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}core/js/jquery.swipebox.min.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}core/js/jquery.mixitup.min.js"></script>
+
+<!-- Bootstrap Validator -->
+<script type="text/javascript" src="{{ STATIC_URL }}core/js/validator.js"></script>
 
 <!-- script-for-nav -->
 <script>
@@ -13,6 +20,24 @@
       });
     });
 </script>
+
+
+<!-- FlexSlider -->
+<script type="text/javascript">
+    // $(function(){
+    //   SyntaxHighlighter.all();
+    // });
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+</script>
+<!-- FlexSlider -->
+
 
 <!------ Light Box ------>
 

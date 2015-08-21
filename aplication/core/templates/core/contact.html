@@ -7,108 +7,55 @@
 
 <!-- contact-section -->
 <!-- contact -->
-	<div class="contact">
+<div class="contact">
 
-		<div class="container">
-			<div class="contact-grids">
-				<div class="contact-left">
-					<h2>Address</h2>
-					<span>congue. Phasellus rhoncus elementum diam.</span>
-					<p>Lorem ipsum dolor sit amet,</p> consectetur adipiscing elit.</p><p> Nunc sit amet lectus</p><p> Eget leo-12345678</p>
-					<p> Eget leo-00000001</p>
-				</div>
-				<div class="contact-right">
-					<h2>Contact me</h2>
-					<form>
-						<div>
-							<span>Name</span>
-							<input type="text">
-						</div>
-						<div>
-							<span>Email</span>
-							<input type="text">
-						</div>
-						<div>
-							<span>Subject</span>
-							<input type="text">
-						</div>
-						<div>
-							<span>Message</span>
-							<textarea> </textarea>
-						</div>
-						<input type="submit" Value="Submit" />
-					</form>
-				</div>
-				<div class="clearfix"> </div>
+	<div class="container">
+		<div class="contact-grids">
+			<div class="contact-left">
+				<h2>Address</h2>
+				<span>congue. Phasellus rhoncus elementum diam.</span>
+				<p>Lorem ipsum dolor sit amet,</p> consectetur adipiscing elit.</p><p> Nunc sit amet lectus</p><p> Eget leo-12345678</p>
+				<p> Eget leo-00000001</p>
 			</div>
-		</div>
-	</div>
-	<!-- contact -->
-<!-- contact-section  -->
-<!-- keep in touch -->
-	<div class="keep">
-		<div class="container">
-			<h3>keep in touch.</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-			<div class="col-md-7 text-field-email">
-				<form>
-					<input type="text" class="text" value="E-mail address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail address ';}">
-				</form>
-			</div>
-			<div class="col-md-5 button1">
-				<form>
-					<input type="submit" value="subscribe">
+			<div class="contact-right">
+				{% if response %}
+					<div class="alert alert-{{ response.type }}" role="alert">
+      					<strong>{{ response.title }}</strong> {{ response.message }}
+    				</div>
+				{% endif %}
+				<h2>Mande um email.</h2>
+
+				<form method="POST" action="" data-toggle="validator" role="form">
+				    {% csrf_token %}
+					<div class="form-group">
+						<span>Name</span>
+						<input type="text" name="name" required>
+						 <div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group">
+						<span>Email</span>
+						<input type="email" name="email" required>
+						 <div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group">
+						<span>Assunto</span>
+						<input type="text" name="topic" required>
+						 <div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group">
+						<span>Mensagem</span>
+						<textarea name="message" required> </textarea>
+						<div class="help-block with-errors"></div>
+					</div>
+					<input type="submit" Value="Submit" />
 				</form>
 			</div>
 			<div class="clearfix"> </div>
 		</div>
 	</div>
-<!-- keep in touch -->
+</div>
+<!-- contact -->
+<!-- contact-section  -->
 
-<!-- contactus -->
-	<div class="contactus">
-		<div class="container">
-			<h3>contact us</h3>
-				<div class="col-md-5">
-					<h4>contact form</h4>
-					<form>
-						<input type="text" class="text" value="NAME" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'NAME';}">
-						<input type="text" class="text" value="EMAIL" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'EMAIL';}">
-						<textarea value="MESSAGE:" onfocus="if(this.value == 'MESSAGE') this.value='';" onblur="if(this.value == '') this.value='MESSAGE';">MESSAGE</textarea>
-					</form>
-				</div>
-				<div class="col-md-4 info">
-						<h4>more info</h4>
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106034.86973547915!2d151.21288358178987!3d-33.84869089455211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b129838f39a743f%3A0x3017d681632a850!2sSydney+NSW%2C+Australia!5e0!3m2!1sen!2sin!4v1413550737925" width="" height="" frameborder="0" style="border:0"></iframe>
-				</div>
-				<div class="col-md-3 pisan">
-					<div class="icon1">
-						<i class="ph"> </i>
-					</div>
-					<div class="data1">
-						<h5>+(123)456-789-1234</h5>
-						<p>+(123)456-789-1234</p>
-					</div>
-						<div class="clearfix"></div>
-					<div class="icon1">
-						<i class="alu"> </i>
-					</div>
-					<div class="data1">
-						<h5>Alus Pisan</h5>
-						<p>23 Street BoulevardCity, WA 12345, USA</p>
-					</div>
-						<div class="clearfix"></div>
-					<div class="icon1">
-						<i class="msg"> </i>
-					</div>
-					<div class="data1">
-						<h5><a href="#">contact@gmail.com</a></h5>
-					</div>
-						<div class="clearfix"></div>
-				</div>
-					<div class="clearfix"></div>
-		</div>
-	</div>
-<!-- contactus -->
 {% endblock %}
 

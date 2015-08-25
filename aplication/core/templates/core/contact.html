@@ -9,50 +9,50 @@
 <!-- contact -->
 <div class="contact">
 
-	<div class="container">
-		<div class="contact-grids">
-			<div class="contact-left">
-				<h2>Address</h2>
-				<span>congue. Phasellus rhoncus elementum diam.</span>
-				<p>Lorem ipsum dolor sit amet,</p> consectetur adipiscing elit.</p><p> Nunc sit amet lectus</p><p> Eget leo-12345678</p>
-				<p> Eget leo-00000001</p>
-			</div>
-			<div class="contact-right">
-				{% if response %}
-					<div class="alert alert-{{ response.type }}" role="alert">
-      					<strong>{{ response.title }}</strong> {{ response.message }}
-    				</div>
-				{% endif %}
-				<h2>Mande um email.</h2>
 
-				<form method="POST" action="" data-toggle="validator" role="form">
-				    {% csrf_token %}
-					<div class="form-group">
-						<span>Name</span>
-						<input type="text" name="name" required>
-						 <div class="help-block with-errors"></div>
-					</div>
-					<div class="form-group">
-						<span>Email</span>
-						<input type="email" name="email" required>
-						 <div class="help-block with-errors"></div>
-					</div>
-					<div class="form-group">
-						<span>Assunto</span>
-						<input type="text" name="topic" required>
-						 <div class="help-block with-errors"></div>
-					</div>
-					<div class="form-group">
-						<span>Mensagem</span>
-						<textarea name="message" required> </textarea>
-						<div class="help-block with-errors"></div>
-					</div>
-					<input type="submit" Value="Submit" />
-				</form>
-			</div>
-			<div class="clearfix"> </div>
+	<div class="contact-grids">
+		<div class="contact-left">
+			<h2>Address</h2>
+			<span>congue. Phasellus rhoncus elementum diam.</span>
+			<p>Lorem ipsum dolor sit amet,</p> consectetur adipiscing elit.</p><p> Nunc sit amet lectus</p><p> Eget leo-12345678</p>
+			<p> Eget leo-00000001</p>
 		</div>
+		<div class="contact-right">
+			{% if response %}
+				<div class="alert alert-{{ response.type }}" role="alert">
+  					<strong>{{ response.title }}</strong> {{ response.message }}
+				</div>
+			{% endif %}
+			<h2>Mande um email.</h2>
+
+			<form method="POST" action="" data-toggle="validator" role="form">
+			    {% csrf_token %}
+				<div class="form-group">
+					<span>Name</span>
+					<input type="text" name="name" required>
+					 <div class="help-block with-errors"></div>
+				</div>
+				<div class="form-group">
+					<span>Email</span>
+					<input type="email" name="email" required>
+					 <div class="help-block with-errors"></div>
+				</div>
+				<div class="form-group">
+					<span>Assunto</span>
+					<input type="text" name="topic" required>
+					 <div class="help-block with-errors"></div>
+				</div>
+				<div class="form-group">
+					<span>Mensagem</span>
+					<textarea name="message" required> </textarea>
+					<div class="help-block with-errors"></div>
+				</div>
+				<input type="submit" Value="Submit" />
+			</form>
+		</div>
+		<div class="clearfix"> </div>
 	</div>
+
 </div>
 <!-- contact -->
 <!-- contact-section  -->

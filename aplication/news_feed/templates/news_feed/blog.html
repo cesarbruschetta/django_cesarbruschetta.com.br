@@ -7,90 +7,90 @@
 {% block content %}
 <!-- header -->
 <div class="blog">
-	<div class="container">
-		<div class="blog-left">
-			<div class="blog-left-head">
-				<span> </span>
-				<h3>{{ sub_title_page }}</h3>
-			</div>
-			<div class="blog-artical-grids row">
 
-				{% for new in news %}
-
-					<div class="blog-artical-grid col-md-4">
-						<h3>
-							<a href="{{ new.link }}" target="blank">{{ new.title }}</a>
-						</h3>
-						<div class="clearfix"> </div>
-						<div class="blog-artical-grid-pic-info">
-							{% if new.imagem %}
-								<div class="blog-artical-grid-pic">
-									<a href="{{ new.link }}" target="blank">
-										<img src="{{ new.imagem.url }}" class="img-responsive"
-											 alt="{{ new.title }}" title="{{ new.title }}" />
-									</a>
-								</div>
-							{% else %}
-								<div class="blog-artical-grid-pic"></div>
-							{% endif %}
-							<div class="blog-artical-grid-pic-info-admin">
-								<div class="blog-artical-grid-pic-info-admin-left">
-									<ul>
-										<li>
-											<a href="{% url 'feed_blog' new.feed.slug %}">
-												<img src="{{ new.feed.logo.url }}" title="{{ new.feed.title }}"
-													 title="{{ new.feed.title }}">
-											</a>
-										</li>
-										<li>
-											<p>Escrito por <a href="{% url 'feed_blog' new.feed.slug %}">{{ new.feed.title }}</a></p>
-										</li>
-									</ul>
-								</div>
-								<div class="blog-artical-grid-pic-info-admin-right">
-									<h6>
-										{{ new.created|date:'d' }}/<span>{{ new.created|date:'m' }}</span>
-									</h6>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-						</div>
-						<!-- start-artical-tags
-						<div class="artical-tags">
-							<ul>
-								<li><a href="#">Art</a></li>
-								<li><a href="#">WebDesign</a></li>
-								<li><a href="#">Logotypes</a></li>
-								<div class="clearfix"> </div>
-							</ul>
-						</div>-->
-
-						<!-- start-artical-destilas -->
-							<div class="artical-details">
-								<div class="artical-details-left">
-								 	{% autoescape off %}
-										{{ new.get_content }}
-									{% endautoescape %}
-								</div>
-
-								<div class="clearfix"> </div>
-							</div>
-						<!-- //End-artical-destilas -->
-						<div class="artical-more-btn">
-							<a href="{{ new.link }}" target="blank">
-								<span>Leia Mais...</span>
-							</a>
-						</div>
-					</div><!-- //End-blog-artical-grid -->
-
-				{% endfor %}
-			</div>
-			<div class="clearfix"> </div>
-
-			{% xpaginator pageURI total_item current 10 1 True 1 %}
-			{% include "news_feed/xpaginate.html" %}
+	<div class="blog-left">
+		<div class="blog-left-head">
+			<span> </span>
+			<h3>{{ sub_title_page }}</h3>
 		</div>
+		<div class="blog-artical-grids row">
+
+			{% for new in news %}
+
+				<div class="blog-artical-grid col-md-4">
+					<h3>
+						<a href="{{ new.link }}" target="blank">{{ new.title }}</a>
+					</h3>
+					<div class="clearfix"> </div>
+					<div class="blog-artical-grid-pic-info">
+						{% if new.imagem %}
+							<div class="blog-artical-grid-pic">
+								<a href="{{ new.link }}" target="blank">
+									<img src="{{ new.imagem.url }}" class="img-responsive"
+										 alt="{{ new.title }}" title="{{ new.title }}" />
+								</a>
+							</div>
+						{% else %}
+							<div class="blog-artical-grid-pic"></div>
+						{% endif %}
+						<div class="blog-artical-grid-pic-info-admin">
+							<div class="blog-artical-grid-pic-info-admin-left">
+								<ul>
+									<li>
+										<a href="{% url 'feed_blog' new.feed.slug %}">
+											<img src="{{ new.feed.logo.url }}" title="{{ new.feed.title }}"
+												 title="{{ new.feed.title }}">
+										</a>
+									</li>
+									<li>
+										<p>Escrito por <a href="{% url 'feed_blog' new.feed.slug %}">{{ new.feed.title }}</a></p>
+									</li>
+								</ul>
+							</div>
+							<div class="blog-artical-grid-pic-info-admin-right">
+								<h6>
+									{{ new.created|date:'d' }}/<span>{{ new.created|date:'m' }}</span>
+								</h6>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<!-- start-artical-tags
+					<div class="artical-tags">
+						<ul>
+							<li><a href="#">Art</a></li>
+							<li><a href="#">WebDesign</a></li>
+							<li><a href="#">Logotypes</a></li>
+							<div class="clearfix"> </div>
+						</ul>
+					</div>-->
+
+					<!-- start-artical-destilas -->
+						<div class="artical-details">
+							<div class="artical-details-left">
+							 	{% autoescape off %}
+									{{ new.get_content }}
+								{% endautoescape %}
+							</div>
+
+							<div class="clearfix"> </div>
+						</div>
+					<!-- //End-artical-destilas -->
+					<div class="artical-more-btn">
+						<a href="{{ new.link }}" target="blank">
+							<span>Leia Mais...</span>
+						</a>
+					</div>
+				</div><!-- //End-blog-artical-grid -->
+
+			{% endfor %}
+		</div>
+		<div class="clearfix"> </div>
+
+		{% xpaginator pageURI total_item current 10 1 True 1 %}
+		{% include "news_feed/xpaginate.html" %}
 	</div>
+
 	<div class="clearfix"> </div>
 </div>
 {% endblock %}

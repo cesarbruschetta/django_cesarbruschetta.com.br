@@ -2,29 +2,40 @@
 {% block banner_title %}
 	<h1>Portfólio</h1>
 {% endblock %}
+{% block styles %}
+	{{block.super}}
+
+	<link href="{{ STATIC_URL }}core/css/portfolio.css" rel="stylesheet" type="text/css" media="all">
+
+{% endblock %}
 
 {% block content %}
-
 <!-- portfolio-section -->
 <div class="portfolio">
 	<div class="services-wel wel-head text-center">
 		<h3><span>Meu</span> Portifólio </h3>
-		<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+		<p>Veja aqui alguns de meus trabalhos.</p>
 	</div>
 	<div id="portfoliolist">
 
 		{% for item in portfolio_items %}
-			<div class="portfolio card mix_all  wow bounceIn" data-wow-delay="0.4s" style="display: inline-block; opacity: 1;">
+			<div class="portfolio card mix_all bounceIn" style="display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper grid_box">
-					 <a href="{{item.url}}" class="swipebox"  title="{{ item.title }}" alt="{{ item.title }}">
-					 	<img src="{{ item.image }}" class="img-responsive" title="{{ item.title }}" alt="{{ item.title }}">
-					 		<span class="zoom-icon"></span>
-				 		</a>
+				   <div class="view view-fourth">
+	                    <img src="{{ item.image }}" class="img-responsive" title="{{ item.title }}" alt="{{ item.title }}" />
+	                    <div class="mask">
+	                        <h4>{{ item.title }}</h4>
+	                        <p></p>
+	                        <a href="{{item.url}}" class="info thickbox play-icon" target="blank">Veja mais</a>
+	                    </div>
+	            	</div>
                 </div>
 			</div>
 		{% endfor %}
+
 		<div class="clearfix"></div>
 	</div>
+
     <div class="clearfix"></div>
 </div>
 

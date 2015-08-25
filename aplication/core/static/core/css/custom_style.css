@@ -8,6 +8,41 @@
     display: none;
 }
 
+.curriculo .underline{
+    text-decoration: underline;
+}
+
+.curriculo li{
+    font-size: 1em;
+    font-weight: 300;
+    color: #323232;
+    line-height: 1.8em;
+    text-align: justify;
+}
+.curriculo p{
+    text-align: justify;
+}
+
+
+
+
+
+
+
+.services-top-grids .img-full{
+    width: 100%;
+}
+
+.service-grids p,
+.service-grids ul li{
+    text-align: justify;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    font-weight: 400;
+    color: #777;
+    margin: 1em 0;
+}
+
 .blog-left {
     width: 100%;
 }

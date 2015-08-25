@@ -19,3 +19,16 @@ DEPENDENCIAS
     - libmysqlclient-dev
     - memcached
     - git-core
+
+
+
+-----------------------
+tamalho das imagens
+
+portifolio
+350 x 350
+
+serviços
+800 x 400
+
+

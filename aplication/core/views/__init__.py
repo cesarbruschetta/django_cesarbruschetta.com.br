@@ -4,13 +4,7 @@ from django.shortcuts import render
 # Create your views here.
 from .portfolio import portfolio
 from .contact import contact
-
-
-def home(request):
-    context = {
-        'title_page': 'Home'
-    }
-    return render(request, 'core/index.html', context)
+from .home import home
 
 
 def about(request):

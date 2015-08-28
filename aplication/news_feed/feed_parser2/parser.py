@@ -1,23 +1,17 @@
 # -*- coding: utf-8 -*-
-
-import feedparser
-from hashlib import md5
-from urllib.request import urlopen
-
 from django.template.defaultfilters import slugify
-# import json as simplejson
-
 from django.core.files.temp import NamedTemporaryFile
 from django.core.files.uploadedfile import InMemoryUploadedFile
 
+import feedparser
+import logging
+from urllib.request import urlopen
 
 from aplication.news_feed.models import NewsFeedModels, FeedModels
-
-
 from .utils.file import FileHandler
 from .rss_feed_importer import RssFeedImporter
 
-import logging
+
 logger = logging.getLogger(__name__)
 
 
@@ -29,6 +23,9 @@ class Parser(object):
 
     def parse(self):
         for feed in self.feed_list:
+            logger.info("Atualizando Feed %s (%s)" % (feed['title'],
+                                                      feed['url_feed'])
+                        )
             self.get_content(feed['url_feed'], feed['title'], feed['id'])
 
     def get_feed_list(self, id_feed=None):
@@ -57,8 +54,6 @@ class Parser(object):
         return feeds
 
     def get_content(self, url, feed_title, feed_id):
-        print(feed_title)
-        print(url)
 
         i = 0
         feeds = feedparser.parse(url)
@@ -100,7 +95,6 @@ class Parser(object):
                     image_name = FileHandler\
                         .generate_filename_based_on_url(item.img)
 
-                    # image_name = md5(image_name.encode('utf-8')).hexdigest()
                     image_temp.write(image_content)
                     image_size = len(image_content)
                     http_message = image_response.info()

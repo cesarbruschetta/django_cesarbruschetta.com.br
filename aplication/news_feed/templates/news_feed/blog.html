@@ -15,19 +15,19 @@
 	<div class="blog-left">
 		<div class="blog-artical-grids">
 
-			{% for new in news %}
+			{% for news in news_list %}
 
 				<div class="blog-artical-grid col-md-4">
 					<h3>
-						<a href="{{ new.link }}" target="blank">{{ new.title }}</a>
+						<a href="{{ news.link }}" target="blank">{{ news.title }}</a>
 					</h3>
 					<div class="clearfix"> </div>
 					<div class="blog-artical-grid-pic-info">
-						{% if new.imagem %}
+						{% if news.imagem %}
 							<div class="blog-artical-grid-pic">
-								<a href="{{ new.link }}" target="blank">
-									<img src="{{ new.imagem.url }}" class="img-responsive"
-										 alt="{{ new.title }}" title="{{ new.title }}" />
+								<a href="{{ news.link }}" target="blank">
+									<img src="{{ news.imagem.url }}" class="img-responsive"
+										 alt="{{ news.title }}" title="{{ news.title }}" />
 								</a>
 							</div>
 						{% else %}
@@ -37,19 +37,19 @@
 							<div class="blog-artical-grid-pic-info-admin-left">
 								<ul>
 									<li>
-										<a href="{% url 'feed_blog' new.feed.slug %}">
-											<img src="{{ new.feed.logo.url }}" title="{{ new.feed.title }}"
-												 title="{{ new.feed.title }}">
+										<a href="{% url 'feed_blog' news.feed.slug %}">
+											<img src="{{ news.feed.logo.url }}" title="{{ news.feed.title }}"
+												 title="{{ news.feed.title }}">
 										</a>
 									</li>
 									<li>
-										<p>Escrito por <a href="{% url 'feed_blog' new.feed.slug %}">{{ new.feed.title }}</a></p>
+										<p>Escrito por <a href="{% url 'feed_blog' news.feed.slug %}">{{ news.feed.title }}</a></p>
 									</li>
 								</ul>
 							</div>
 							<div class="blog-artical-grid-pic-info-admin-right">
 								<h6>
-									{{ new.created|date:'d' }}/<span>{{ new.created|date:'m' }}</span>
+									{{ news.created|date:'d' }}/<span>{{ news.created|date:'m' }}</span>
 								</h6>
 							</div>
 							<div class="clearfix"> </div>
@@ -69,7 +69,7 @@
 						<div class="artical-details">
 							<div class="artical-details-left">
 							 	{% autoescape off %}
-									{{ new.get_content }}
+									{{ news.get_content }}
 								{% endautoescape %}
 							</div>
 
@@ -77,7 +77,7 @@
 						</div>
 					<!-- //End-artical-destilas -->
 					<div class="artical-more-btn">
-						<a href="{{ new.link }}" target="blank">
+						<a href="{{ news.link }}" target="blank">
 							<span>Leia Mais...</span>
 						</a>
 					</div>

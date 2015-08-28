@@ -31,7 +31,7 @@ def blog_home(request):
         'title_page': 'Blog',
         'prefix_sub_title_page': 'Últimas',
         'sub_title_page': 'Notícias',
-        'news': news,
+        'news_list': news,
         'total_item': items,
         'pageURI': pageURI,
         'current': page,

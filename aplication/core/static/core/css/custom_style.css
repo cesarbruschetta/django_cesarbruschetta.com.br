@@ -1,6 +1,7 @@
 
 .head-nav ul li a{
-    color: #000;
+    color: #d9d9d9;
+    font-weight: bold;
 }
 
 .nbs-flexisel-nav-left,
@@ -17,6 +18,26 @@
 .portfolio  span,
 .blog span{
     color: #FFA200;
+}
+
+.banner-info p{
+    color: #000;
+}
+
+.home .studies{
+    margin-top: 2em;
+}
+
+.home .wmuSlider{
+    width: 95%;
+    margin: auto;
+}
+.home .man {
+    float: left;
+    width: 40%;
+}
+.home .data{
+    margin-right: 1em;
 }
 
 

@@ -32,7 +32,7 @@ def posts_feed_blog(request, slug):
         'title_page': 'Blog - %s' % (feed.title),
         'prefix_sub_title_page': 'Notícas',
         'sub_title_page': feed.title,
-        'news': news,
+        'news_list': news,
         'total_item': items,
         'pageURI': pageURI,
         'current': page,

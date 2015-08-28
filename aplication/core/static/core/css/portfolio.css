@@ -83,7 +83,7 @@
    transform: scale(0);*/
    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
    filter: alpha(opacity=0);
-   opacity: 0.5;
+   opacity: 0.4;
    -webkit-transition-delay: 0s;
    -moz-transition-delay: 0s;
    -o-transition-delay: 0s;

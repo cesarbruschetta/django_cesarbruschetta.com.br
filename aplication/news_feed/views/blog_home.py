@@ -29,7 +29,8 @@ def blog_home(request):
 
     context = {
         'title_page': 'Blog',
-        'sub_title_page': 'Últimas Noticias',
+        'prefix_sub_title_page': 'Últimas',
+        'sub_title_page': 'Notícias',
         'news': news,
         'total_item': items,
         'pageURI': pageURI,

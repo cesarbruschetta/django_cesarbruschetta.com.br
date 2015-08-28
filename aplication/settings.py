@@ -151,6 +151,13 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, "core/static"),
 )
 
+# EMAIL SMTP
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_HOST_USER = 'contato@cesarbruschetta.com.br'
+EMAIL_HOST_PASSWORD = '9vjeboat'
+
 
 # Logging
 #

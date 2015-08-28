@@ -8,32 +8,69 @@
     display: none;
 }
 
+.about-section, .portfolio, .blog, .contact{
+    background: #fafafa;
+    padding: 2em 0 3em;
+    margin: 0;
+}
+.about-section span,
+.portfolio  span,
+.blog span{
+    color: #FFA200;
+}
+
+
 .curriculo .underline{
     text-decoration: underline;
 }
+.curriculo b{
+    color: #424242;
+}
 
 .curriculo li{
-    font-size: 1em;
-    font-weight: 300;
-    color: #323232;
+    /*font-size: 1em;*/
+    /*font-weight: 300;*/
+    color: #777;
     line-height: 1.8em;
     text-align: justify;
 }
-.curriculo p{
+.curriculo p,
+.contact p{
     text-align: justify;
+    color: #777
+}
+.team {
+    padding: 1em 2em;
 }
 
+.team i.fff{
+    width: 25px;
+}
+
+
+
+div#portfoliolist {
+    padding: 0.5em 0px;
+}
 
 #portfoliolist .portfolio{
     padding: 0.5em;
 }
 
-
-
-
+#portfoliolist a:hover{
+    color: #1B242F;
+    text-decoration: none;
+}
+#portfoliolist a.info:hover{
+    color: #FFA200;
+}
 
 
 .services-top-grids .img-full{
+    width: 100%;
+}
+
+.service-grids .col-full{
     width: 100%;
 }
 

@@ -12,10 +12,12 @@
 
 	<div class="contact-grids">
 		<div class="contact-left">
-			<h2>Address</h2>
-			<span>congue. Phasellus rhoncus elementum diam.</span>
-			<p>Lorem ipsum dolor sit amet,</p> consectetur adipiscing elit.</p><p> Nunc sit amet lectus</p><p> Eget leo-12345678</p>
-			<p> Eget leo-00000001</p>
+			<h2>Quero saber sua opinão!</h2>
+			<span></span>
+			<p>Quero falar com voce.</p>
+			<p>Envie uma mensagem com sua dúvida, critica, elogio ou sugestão, utilizando o formulário ao lado.</p>
+			<p>Obrigado pela visita, até mais. ;)</p>
+
 		</div>
 		<div class="contact-right">
 			{% if response %}
@@ -23,17 +25,17 @@
   					<strong>{{ response.title }}</strong> {{ response.message }}
 				</div>
 			{% endif %}
-			<h2>Mande um email.</h2>
+			<h2>Mande um email</h2>
 
 			<form method="POST" action="" data-toggle="validator" role="form">
 			    {% csrf_token %}
 				<div class="form-group">
-					<span>Name</span>
+					<span>Nome</span>
 					<input type="text" name="name" required>
 					 <div class="help-block with-errors"></div>
 				</div>
 				<div class="form-group">
-					<span>Email</span>
+					<span>E-mail</span>
 					<input type="email" name="email" required>
 					 <div class="help-block with-errors"></div>
 				</div>

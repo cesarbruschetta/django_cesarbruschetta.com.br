@@ -22,12 +22,15 @@
 			<div class="portfolio card mix_all bounceIn" style="display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper grid_box">
 				   <div class="view view-fourth">
-	                    <img src="{{ item.image }}" class="img-responsive" title="{{ item.title }}" alt="{{ item.title }}" />
-	                    <div class="mask">
-	                        <h4>{{ item.title }}</h4>
-	                        <p></p>
-	                        <a href="{{item.url}}" class="info thickbox play-icon" target="blank">Veja mais</a>
-	                    </div>
+				   		<a href="{{item.url}}" target="blank" title="{{ item.title }}" alt="{{ item.title }}">
+		                    <img src="{{ item.image }}" class="img-responsive" title="{{ item.title }}" alt="{{ item.title }}" />
+		                    <div class="mask">
+		                        <h4>{{ item.title }}</h4>
+		                        <p></p>
+		                        <a href="{{item.url}}" title="{{ item.title }}" alt="{{ item.title }}"
+		                        	class="info thickbox play-icon" target="blank">Veja mais</a>
+		                    </div>
+						</a>
 	            	</div>
                 </div>
 			</div>

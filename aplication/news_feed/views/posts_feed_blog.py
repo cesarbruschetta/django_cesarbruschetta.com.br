@@ -30,7 +30,8 @@ def posts_feed_blog(request, slug):
 
     context = {
         'title_page': 'Blog - %s' % (feed.title),
-        'sub_title_page': 'Noticas - %s' % (feed.title),
+        'prefix_sub_title_page': 'Notícas',
+        'sub_title_page': feed.title,
         'news': news,
         'total_item': items,
         'pageURI': pageURI,

@@ -22,7 +22,25 @@
 
 .banner-info p{
     color: #000;
+    text-align: right;
+    width: 41%;
+    text-shadow: 0 0 10px #fff;
 }
+
+.banner .flex-control-nav{
+    bottom: -140px;
+}
+
+.home i.mail,
+.home i.gear{
+    width: 122px;
+    height: 140px;
+    font-size: 140px;
+    color: #FFA200;
+}
+
+
+
 
 .home .studies{
     margin-top: 2em;
@@ -43,6 +61,7 @@
 
 .curriculo .underline{
     text-decoration: underline;
+    color: #424242;
 }
 .curriculo b{
     color: #424242;

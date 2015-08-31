@@ -9,7 +9,7 @@ from aplication.core.utils.url_gen import urlGen
 def blog_home(request):
 
     news_list = NewsFeedModels.objects.all()
-    news_paginator = Paginator(news_list, 10)
+    news_paginator = Paginator(news_list, 12)
 
     try:
         page = int(request.REQUEST.get('page', '1'))

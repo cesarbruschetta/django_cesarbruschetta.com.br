@@ -24,7 +24,6 @@ DEPENDENCIAS
     - libxslt1-dev
     - lib32z1-dev
 
-
 INSTALAÇÃO
 -------------------------
 

@@ -8,7 +8,7 @@ from aplication.news_feed.models import NewsFeedModels
 def home(request):
 
     news_list = NewsFeedModels.objects.all()
-
+    news_list = news_list.exclude(imagem=None)
 
     context = {
         'title_page': 'Home',

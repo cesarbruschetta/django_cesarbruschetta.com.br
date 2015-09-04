@@ -23,16 +23,12 @@
 					</h3>
 					<div class="clearfix"> </div>
 					<div class="blog-artical-grid-pic-info">
-						{% if news.imagem %}
-							<div class="blog-artical-grid-pic">
-								<a href="{{ news.link }}" target="blank">
-									<img src="{{ news.imagem.url }}" class="img-responsive"
-										 alt="{{ news.title }}" title="{{ news.title }}" />
-								</a>
-							</div>
-						{% else %}
-							<div class="blog-artical-grid-pic"></div>
-						{% endif %}
+						<div class="blog-artical-grid-pic">
+							<a href="{{ news.link }}" target="blank">
+								<img src="{{ news.get_imagem }}" class="img-responsive"
+									 alt="{{ news.title }}" title="{{ news.title }}" />
+							</a>
+						</div>
 						<div class="blog-artical-grid-pic-info-admin">
 							<div class="blog-artical-grid-pic-info-admin-left">
 								<ul>

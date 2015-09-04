@@ -2,12 +2,12 @@
 from django.template.defaultfilters import slugify
 from django.core.files.temp import NamedTemporaryFile
 from django.core.files.uploadedfile import InMemoryUploadedFile
+from django.db.models.loading import get_model
 
 import feedparser
 import logging
 from urllib.request import urlopen
 
-from aplication.news_feed.models import NewsFeedModels, FeedModels
 from .utils.file import FileHandler
 from .rss_feed_importer import RssFeedImporter
 
@@ -35,6 +35,7 @@ class Parser(object):
         ex: [{'id': 1234, 'url_feed': 'http://foo.bar/rss/'}]
         """
         feeds = []
+        FeedModels = get_model('news_feed', 'FeedModels')
         if id_feed:
             # RETORNA UMA RSS ESPECIFICADA PELO ID
             try:
@@ -54,6 +55,7 @@ class Parser(object):
         return feeds
 
     def get_content(self, url, feed_title, feed_id):
+        NewsFeedModels = get_model('news_feed', 'NewsFeedModels')
 
         i = 0
         feeds = feedparser.parse(url)

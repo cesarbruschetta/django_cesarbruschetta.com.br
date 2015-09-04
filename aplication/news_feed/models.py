@@ -7,6 +7,7 @@ from datetime import datetime
 import re
 
 from aplication.core.utils.models import *
+from aplication.news_feed.feed_parser2 import SearchImagens
 
 
 class FeedModels(models.Model):
@@ -72,3 +73,11 @@ class NewsFeedModels(models.Model):
     def get_content(self):
         p = re.compile(r'<img .*?>')
         return p.sub('', self.content)
+
+    def get_imagem(self):
+        if self.imagem:
+            return self.imagem.url
+        else:
+            search = SearchImagens(self.title)
+
+            return search.result()

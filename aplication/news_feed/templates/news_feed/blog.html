@@ -17,7 +17,7 @@
 
 			{% for news in news_list %}
 
-				<div class="blog-artical-grid col-md-4">
+				<div class="blog-artical-grid col-md-4 {% if not news.imagem %}no-image{% endif %}">
 					<h3>
 						<a href="{{ news.link }}" target="blank">{{ news.title }}</a>
 					</h3>

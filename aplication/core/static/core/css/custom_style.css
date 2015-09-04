@@ -49,6 +49,7 @@
 .home .wmuSlider{
     width: 95%;
     margin: auto;
+    height:320px;
 }
 .home .man {
     float: left;
@@ -56,6 +57,9 @@
 }
 .home .data{
     margin-right: 1em;
+}
+.home .studies{
+    margin: 0px;
 }
 
 
@@ -128,6 +132,11 @@ div#portfoliolist {
     width: 100%;
 }
 
+.blog-artical-grid.no-image{
+    min-height: 480px;
+}
+
+
 .blog-artical-grid{
     min-height: 630px;
 }
@@ -142,6 +151,11 @@ div#portfoliolist {
     padding:2%;
     width:100%;
 }
+
+.blog-artical-grid h3{
+    min-height: 125px;
+}
+
 
 .blog-artical-grid-pic-info-admin {
   padding-left: 1em;

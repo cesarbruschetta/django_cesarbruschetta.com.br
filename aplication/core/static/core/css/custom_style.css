@@ -14,9 +14,9 @@
     padding: 2em 0 3em;
     margin: 0;
 }
-.about-section span,
-.portfolio  span,
-.blog span{
+.about-section h3 span,
+.portfolio  h3 span,
+.blog h3 span{
     color: #FFA200;
 }
 

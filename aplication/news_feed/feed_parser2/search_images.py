@@ -26,8 +26,9 @@ class SearchImagens(object):
         return self.cache()
 
     def search(self):
-        results = google.search_images(self.query,
-                                       self.options)
+        # results = google.search_images(self.query,
+        #                                self.options)
+        results = []
         if len(results):
             item = results[0]
             return item.link
@@ -46,7 +47,7 @@ class SearchImagens(object):
         else:
             result = self.search()
 
-            timeout = 60 * 60 * 24 * 30
+            timeout = 60 * 60 * 24
             cache.set(key, result, timeout)
 
             return result

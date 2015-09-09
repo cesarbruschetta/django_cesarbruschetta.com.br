@@ -2,13 +2,17 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
 
-from aplication.news_feed.models import NewsFeedModels
 from aplication.core.utils.url_gen import urlGen
+from aplication.news_feed.models import NewsFeedModels
+from aplication.news_feed.utils import split_news
 
 
 def blog_home(request):
 
     news_list = NewsFeedModels.objects.all()
+
+    # DIVIDE  A LISTA DE NEWS EM COM E SEM IMAGEM
+    news_list = split_news(news_list)
     news_paginator = Paginator(news_list, 12)
 
     try:
@@ -24,8 +28,7 @@ def blog_home(request):
 
     url = urlGen()
     pageURI = url.generate('page', request.GET)
-    items = news_list.count()
-    # news = news.object_list
+    items = len(news_list)
 
     context = {
         'title_page': 'Blog',

@@ -2,15 +2,16 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
 
-from aplication.news_feed.models import NewsFeedModels, FeedModels
 from aplication.core.utils.url_gen import urlGen
+from aplication.news_feed.models import NewsFeedModels, FeedModels
+from aplication.news_feed.utils import split_news
 
 
 def posts_feed_blog(request, slug):
 
     feed = get_object_or_404(FeedModels, slug=slug)
     news_list = NewsFeedModels.objects.filter(feed=feed)
-
+    news_list = split_news(news_list)
     news_paginator = Paginator(news_list, 12)
 
     try:
@@ -26,7 +27,7 @@ def posts_feed_blog(request, slug):
 
     url = urlGen()
     pageURI = url.generate('page', request.GET)
-    items = news_list.count()
+    items = len(news_list)
 
     context = {
         'title_page': 'Blog - %s' % (feed.title),

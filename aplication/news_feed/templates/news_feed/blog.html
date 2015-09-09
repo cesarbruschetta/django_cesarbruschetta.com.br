@@ -1,5 +1,6 @@
 {% extends 'core/base/base.html' %}
 {% load xpaginator %}
+{% load tools %}
 {% block banner_title %}
 	<h1>Blog</h1>
 {% endblock %}
@@ -16,19 +17,25 @@
 		<div class="blog-artical-grids">
 
 			{% for news in news_list %}
-
+			{% if news %}
 				<div class="blog-artical-grid col-md-4 {% if not news.imagem %}no-image{% endif %}">
 					<h3>
 						<a href="{{ news.link }}" target="blank">{{ news.title }}</a>
 					</h3>
 					<div class="clearfix"> </div>
 					<div class="blog-artical-grid-pic-info">
-						<div class="blog-artical-grid-pic">
-							<a href="{{ news.link }}" target="blank">
-								<img src="{{ news.get_imagem }}" class="img-responsive"
-									 alt="{{ news.title }}" title="{{ news.title }}" />
-							</a>
-						</div>
+
+						{% if news.imagem %}
+							<div class="blog-artical-grid-pic">
+								<a href="{{ news.link }}" target="blank">
+									<img src="{{ news.get_imagem }}" class="img-responsive"
+										 alt="{{ news.title }}" title="{{ news.title }}" />
+								</a>
+							</div>
+						{% else %}
+							<div class="blog-artical-grid-pic"></div>
+						{% endif %}
+
 						<div class="blog-artical-grid-pic-info-admin">
 							<div class="blog-artical-grid-pic-info-admin-left">
 								<ul>
@@ -65,7 +72,7 @@
 						<div class="artical-details">
 							<div class="artical-details-left">
 							 	{% autoescape off %}
-									{{ news.get_content }}
+									{{ news.get_content|truncatesmart }}
 								{% endautoescape %}
 							</div>
 
@@ -78,7 +85,7 @@
 						</a>
 					</div>
 				</div><!-- //End-blog-artical-grid -->
-
+			{% endif %}
 			{% endfor %}
 		</div>
 		<div class="clearfix"> </div>

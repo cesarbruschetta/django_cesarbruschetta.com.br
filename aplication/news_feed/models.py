@@ -2,12 +2,12 @@
 
 from django.db import models
 from django.template.defaultfilters import slugify
+from django.conf import settings
 
 from datetime import datetime
 import re
 
 from aplication.core.utils.models import *
-from aplication.news_feed.feed_parser2 import SearchImagens
 
 
 class FeedModels(models.Model):
@@ -78,6 +78,4 @@ class NewsFeedModels(models.Model):
         if self.imagem:
             return self.imagem.url
         else:
-            search = SearchImagens(self.title)
-
-            return search.result()
+            return '%score/images/placeholdi_news.png' % (settings.STATIC_URL)

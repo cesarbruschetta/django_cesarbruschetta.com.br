@@ -56,7 +56,8 @@ class NewsFeedModels(models.Model):
 
     feed = models.ForeignKey('news_feed.FeedModels')
     title = models.CharField(verbose_name="Titulo", **CHARN)
-    description = models.TextField(u"Subtítulo da notícia", default='')
+    description = models.TextField(u"Subtítulo da notícia", default='',
+                                   ** NULL)
     content = models.TextField(verbose_name=u'Conteudo', default='')
 
     category = models.CharField(**CHARN)

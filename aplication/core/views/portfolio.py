@@ -68,7 +68,7 @@ def portfolio(request):
         {
             'url': '/Sites/JLS_Divisorias/',
             'image': 'http://www.cesarbruschetta.com.br/media/portfolio/site10.png',
-            'title': 'JLS Divisorias - OLD'
+            'title': 'JLS Divisorias - Old'
         },
         {
             'url': '/Sites/Speedy_AM',
@@ -131,7 +131,7 @@ def portfolio(request):
             'title': 'King of Games'
         },
         {
-            'url': 'http://portaldjangocms.cesarbruschetta.com.br/',
+            'url': 'http://portaldjangocms.herokuapp.com/',
             'image': 'http://www.cesarbruschetta.com.br/media/portfolio/site25.png',
             'title': 'Django CMS'
         },
@@ -144,6 +144,16 @@ def portfolio(request):
             'url': 'http://portal-nodejs.herokuapp.com/',
             'image': 'http://www.cesarbruschetta.com.br/media/portfolio/site27.png',
             'title': 'Portal NodeJS'
+        },
+        {
+            'url': 'http://cab.cesarbruschetta.com.br/',
+            'image': 'http://www.cesarbruschetta.com.br/media/portfolio/site28.png',
+            'title': u'Cab Informática'
+        },
+        {
+            'url': 'http://plone.cesarbruschetta.com.br/',
+            'image': 'http://www.cesarbruschetta.com.br/media/portfolio/site29.png',
+            'title': 'Cesar Augusto - Old'
         },
     ]
 

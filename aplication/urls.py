@@ -24,7 +24,11 @@ urlpatterns = [
     url(r'^core/', include('aplication.core.urls')),
     url(r'^blog/', include('aplication.news_feed.urls')),
 
-    url(r'^/?$', 'aplication.core.views.home', name="home-site")
+    url(r'^404/?$', 'django.views.defaults.page_not_found'),
+    url(r'^500/?$', 'django.views.defaults.server_error'),
+
+    url(r'^/?$', 'aplication.core.views.home', name="home-site"),
+
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -26,9 +26,12 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = 'hsodhys4r8ha@d%%uwu7#!@b-ul19oeb*q$-e4#zv68rkbs8eh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'cesarbruschetta.com.br',
+    'www.cesarbruschetta.com.br',
+]
 
 
 # Application definition

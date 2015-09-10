@@ -42,7 +42,7 @@ INSTALAÇÃO
     # tar -xf Python-3.3.4.tgz
 
 - Acessando a pasta descompactada, execute os comando para compilar o python:
-    # ./configure --prefix=/opt/core/ & make & make install
+    # ./configure --prefix=/opt/core/ && make && make install
 
 - Apos o termino de toda a combilação, remova o tar-gz e a pasta do python 3.3.4:
     # rm -rf Python-3.3.4*

@@ -28,26 +28,30 @@ def strip_tags(text, valid_tags={}):
 
     retorna: <a href='#' title='bar'>link</a>
     """
-    text = HTMLParser().unescape(text)
-    soup = BeautifulSoup(text)
-    for comment in soup.findAll(text=lambda text: isinstance(text, Comment)):
-        comment.extract()
-    for tag in soup.findAll(True):
-        if tag.name in valid_tags:
-            valid_attrs = valid_tags[tag.name]
-            # tag.attrs = [(attr, val.replace('javascript:', ''))
-            #              for attr, val in tag.attrs if attr in valid_attrs]
+    try:
+        text = HTMLParser().unescape(text)
+        soup = BeautifulSoup(text)
+        for comment in soup.findAll(text=lambda text: isinstance(text, Comment)):
+            comment.extract()
+        for tag in soup.findAll(True):
+            if tag.name in valid_tags:
+                valid_attrs = valid_tags[tag.name]
+                # tag.attrs = [(attr, val.replace('javascript:', ''))
+                #              for attr, val in tag.attrs if attr in valid_attrs]
 
-            attrs = {}
-            for attr, val in tag.attrs.items():
-                if attr in valid_attrs:
-                    attrs[attr] = val.replace('javascript:', '')
+                attrs = {}
+                for attr, val in tag.attrs.items():
+                    if attr in valid_attrs:
+                        attrs[attr] = val.replace('javascript:', '')
 
-            tag.attrs = attrs
+                tag.attrs = attrs
 
-        else:
-            tag.hidden = True
-    return soup.renderContents().decode('utf8')
+            else:
+                tag.hidden = True
+        return soup.renderContents().decode('utf8')
+    except Exception as ex:
+        return str(ex)
+
 
 
 def htmlentities(s):

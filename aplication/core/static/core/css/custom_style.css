@@ -195,6 +195,9 @@ div#portfoliolist {
     .blog-artical-grid-pic-info-admin-left li p{
         font-size: 60%;
     }
+    .services-top-grids a.viewmore-s{
+        width: 70%;
+    }
 
 }
 

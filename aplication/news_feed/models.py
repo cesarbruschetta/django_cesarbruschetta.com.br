@@ -71,6 +71,13 @@ class NewsFeedModels(models.Model):
         return '%s : %s - %s' % (self.feed.title, self.title,
                                  self.created.strftime('%d/%m/%Y %H:%M'))
 
+    def delete(self, *args, **kwargs):
+        if self.imagem:
+            obj = self.imagem
+            obj.delete()
+
+        super(NewsFeedModels, self).delete(*args, **kwargs)
+
     def get_content(self):
         p = re.compile(r'<img .*?>')
         return p.sub('', self.content)

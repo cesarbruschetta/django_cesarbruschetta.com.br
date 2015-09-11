@@ -20,7 +20,9 @@
 			{% if news %}
 				<div class="blog-artical-grid col-md-4 {% if not news.imagem %}no-image{% endif %}">
 					<h3>
-						<a href="{{ news.link }}" target="blank">{{ news.title }}</a>
+						<a href="{{ news.link }}" target="blank">
+							{{ news.title|truncatesmart:60 }}
+						</a>
 					</h3>
 					<div class="clearfix"> </div>
 					<div class="blog-artical-grid-pic-info">
@@ -58,15 +60,6 @@
 							<div class="clearfix"> </div>
 						</div>
 					</div>
-					<!-- start-artical-tags
-					<div class="artical-tags">
-						<ul>
-							<li><a href="#">Art</a></li>
-							<li><a href="#">WebDesign</a></li>
-							<li><a href="#">Logotypes</a></li>
-							<div class="clearfix"> </div>
-						</ul>
-					</div>-->
 
 					<!-- start-artical-destilas -->
 						<div class="artical-details">
@@ -84,7 +77,9 @@
 							<span>Leia Mais...</span>
 						</a>
 					</div>
+
 				</div><!-- //End-blog-artical-grid -->
+
 			{% endif %}
 			{% endfor %}
 		</div>
@@ -100,8 +95,17 @@
 {% block scripts %}
 	{{block.super}}
 
-	<script>
-		equalizer($('.blog-artical-grid'));
+	<script type="text/javascript">
+
+		$(window).ready(function() {
+		  var width = $(window).width();
+		  if (width > 480){
+				equalizer($('.blog-artical-grid'));
+		  }else{
+		  	console.log('device mobile not equalizer');
+		  }
+		});
+
 	</script>
 
 {% endblock %}

@@ -151,6 +151,10 @@ div#portfoliolist {
     min-height: 74px;
 }
 
+.blog-artical-grid-pic img{
+    min-height: 260px;
+}
+
 .artical-details-left{
     min-height:100px;
     text-align: justify;
@@ -182,6 +186,9 @@ div#portfoliolist {
     }
     .blog-artical-grid h3{
         min-height: auto;
+    }
+    .blog-artical-grid-pic img{
+        min-height: 190px;
     }
     .artical-details-left{
         min-height: 50px;

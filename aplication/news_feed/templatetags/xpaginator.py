@@ -25,7 +25,7 @@ register = template.Library()
     has_jump_previous:  Has links that "jump" backwords through previous page numbers
     has_jump_foward:    Has page numbers that "jump" through foward page numbers
     foward_page_jump:   Dictionary containg list of forward jumping page numbers
-    foward_page_jump:   Dictionary containg list of previous jumping page numbers
+    previous_page_jump:   Dictionary containg list of previous jumping page numbers
     show_last:          Boolean that smartly determains the current page location to display a link to the last page
     show_last:          Boolean that smartly determains the current page location to display a link to the first page
 

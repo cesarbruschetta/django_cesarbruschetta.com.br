@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 def run(*args):
 
     now = datetime.now()
-    last_month = now - timedelta(days=1)
+    last_month = now - timedelta(days=30)
 
     logger.info(
         'Removendo Noticias ate %s' % (last_month.strftime('%d/%m/%Y'))

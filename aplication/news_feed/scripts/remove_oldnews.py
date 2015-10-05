@@ -16,7 +16,7 @@ def run(*args):
     logger.info(
         'Removendo Noticias ate %s' % (last_month.strftime('%d/%m/%Y'))
     )
-    old_news = NewsFeedModels.objects.filter(created__gte=last_month)
+    old_news = NewsFeedModels.objects.filter(created__lte=last_month)
     count_itens = old_news.count()
     for news in old_news:
         news.delete()

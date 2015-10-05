@@ -37,7 +37,7 @@ class FeedModels(models.Model):
                                               default=ACTIVE)
 
     def __str__(self):
-        return '%s - %s' % (self.title, self.url_feed)
+        return u'%s - %s' % (self.title, self.url_feed)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
@@ -68,8 +68,8 @@ class NewsFeedModels(models.Model):
     created = models.DateTimeField(default=datetime.now)
 
     def __str__(self):
-        return '%s : %s - %s' % (self.feed.title, self.title,
-                                 self.created.strftime('%d/%m/%Y %H:%M'))
+        return u'%s : %s - %s' % (self.feed.title, self.title,
+                                  self.created.strftime('%d/%m/%Y %H:%M'))
 
     def delete(self, *args, **kwargs):
         if self.imagem:

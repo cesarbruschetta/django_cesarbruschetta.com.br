@@ -2,7 +2,7 @@
     <ul>
         {% if xpaginate.has_previous %}
             <li class="frist">
-                <a href="{{ xpaginate.uri }}{{ xpaginate.previous }}">
+                <a href="{{ xpaginate.uri }}{{ xpaginate.previous|safe }}">
                     <span class="fa fa-chevron-left"></span></a>
             </li>
             {% if xpaginate.has_jump_previous %}
@@ -23,7 +23,7 @@
         {% endif %}
 
         <li class="active">
-            <a href="?page={{xpaginate.current}}" >{{ xpaginate.current }}</a>
+            <a href="?page={{xpaginate.current|safe}}" >{{ xpaginate.current }}</a>
         </li>
 
         {% if xpaginate.has_next %}
@@ -49,7 +49,7 @@
                 </li>
             {% endif %}
             <li class="last">
-                <a href="{{ xpaginate.uri }}{{ xpaginate.foward }}">
+                <a href="{{ xpaginate.uri }}{{ xpaginate.foward|safe }}">
                     <span class="fa fa-chevron-right"></span>
                 </a>
             </li>

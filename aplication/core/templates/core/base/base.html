@@ -79,6 +79,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
             </div>
         </div>
+        <!--
+        GlobeSSL Seal Logo Html Builder Code:
+        Shows the logo at URL https://www.globessl.com/documents/new/evCornerSeal.png
+        Logo type is  ("GSSL")
+        //-->
+        <script src="//seal.globessl.com/seal.js"></script>
+        <style>#bottomright { position:fixed; bottom:0px; right:0px; width:100px; height:100px; z-index:999;}</style>
+        <div id="bottomright">
+            <script type="text/javascript">Seal("https://www.globessl.com/documents/new/evCornerSeal.png", "GSSL", "bottomright");</script>
+        </div>
         <!-- footer -->
         {% block scripts %}
             {% include 'core/base/scripts.html' %}

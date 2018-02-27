@@ -99,7 +99,6 @@ DATABASES = {
         'PASSWORD': 'root',
         'HOST': 'localhost',
         'STORAGE_ENGINE': 'MyISAM',
-        'OPTIONS': {'init_command': 'SET storage_engine=MyISAM', },
     }
 }
 

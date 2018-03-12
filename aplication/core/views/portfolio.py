@@ -11,77 +11,77 @@ def portfolio(request):
 
     context['portfolio_items'] = [
         {
-            'url': 'http://sites.cesarbruschetta.com.brTI_Comunicacoes',
+            'url': 'http://sites.cesarbruschetta.com.br/TI_Comunicacoes',
             'image': '/static/core/portfolio/site1.png',
             'title': 'TI Comunicações'
         },
         {
-            'url': 'http://sites.cesarbruschetta.com.brGolden_Gates',
+            'url': 'http://sites.cesarbruschetta.com.br/Golden_Gates',
             'image': '/static/core/portfolio/site12.png',
             'title': 'Golden Gate'
         },
         {
-            'url': 'http://sites.cesarbruschetta.com.brMusic_in_Hand/',
+            'url': 'http://sites.cesarbruschetta.com.br/Music_in_Hand/',
             'image': '/static/core/portfolio/site2.png',
             'title': 'Music In Hand'
         },
         {
-            'url': 'http://sites.cesarbruschetta.com.brU2',
+            'url': 'http://sites.cesarbruschetta.com.br/U2',
             'image': '/static/core/portfolio/site3.png',
             'title': 'U2'
         },
         {
-            'url': 'http://sites.cesarbruschetta.com.brCab_Inf_Old',
+            'url': 'http://sites.cesarbruschetta.com.br/Cab_Inf_Old',
             'image': '/static/core/portfolio/site14.png',
             'title': 'Cab Informatica - Old'
         },
         {
-            'url': 'http://sites.cesarbruschetta.com.brPhysis',
+            'url': 'http://sites.cesarbruschetta.com.br/Physis',
             'image': '/static/core/portfolio/site4.png',
             'title': 'Physis Jardinagem - Old'
         },
         {
-            'url': 'http://sites.cesarbruschetta.com.brServicosrn_old',
+            'url': 'http://sites.cesarbruschetta.com.br/Servicosrn_old',
             'image': '/static/core/portfolio/site5.png',
             'title': 'ServiÃ§os RN - Old'
         },
         {
-            'url': 'http://sites.cesarbruschetta.com.brViage_PaulaTur/',
+            'url': 'http://sites.cesarbruschetta.com.br/Viage_PaulaTur/',
             'image': '/static/core/portfolio/site6.png',
             'title': 'Paula Tur'
         },
         {
-            'url': 'http://sites.cesarbruschetta.com.brLords_of_Games/',
+            'url': 'http://sites.cesarbruschetta.com.br/Lords_of_Games/',
             'image': '/static/core/portfolio/site8.png',
             'title': 'Lords Of Games'
         },
         {
-            'url': 'http://sites.cesarbruschetta.com.brPRB_Virtual/',
+            'url': 'http://sites.cesarbruschetta.com.br/PRB_Virtual/',
             'image': '/static/core/portfolio/site7.png',
             'title': 'PRB Virtual'
         },
         {
-            'url': 'http://sites.cesarbruschetta.com.brWood_Center/',
+            'url': 'http://sites.cesarbruschetta.com.br/Wood_Center/',
             'image': '/static/core/portfolio/site9.png',
             'title': 'Wood Center'
         },
         {
-            'url': 'http://sites.cesarbruschetta.com.brJLS_Divisorias/',
+            'url': 'http://sites.cesarbruschetta.com.br/JLS_Divisorias/',
             'image': '/static/core/portfolio/site10.png',
             'title': 'JLS Divisorias - Old'
         },
         {
-            'url': 'http://sites.cesarbruschetta.com.brSpeedy_AM',
+            'url': 'http://sites.cesarbruschetta.com.br/Speedy_AM',
             'image': '/static/core/portfolio/site11.png',
             'title': 'Speedy AutoMotors'
         },
         {
-            'url': 'http://sites.cesarbruschetta.com.brVidal_Associados',
+            'url': 'http://sites.cesarbruschetta.com.br/Vidal_Associados',
             'image': '/static/core/portfolio/site13.png',
             'title': 'Vidal Associados'
         },
         {
-            'url': 'http://sites.cesarbruschetta.com.brJogos_Flash',
+            'url': 'http://sites.cesarbruschetta.com.br/Jogos_Flash',
             'image': '/static/core/portfolio/site15.png',
             'title': 'Jogos Flash'
         },
@@ -96,17 +96,17 @@ def portfolio(request):
             'title': 'Serviços RN'
         },
         {
-            'url': 'http://sites.cesarbruschetta.com.brXoops_Site/',
+            'url': 'http://sites.cesarbruschetta.com.br/Xoops_Site/',
             'image': '/static/core/portfolio/site18.png',
             'title': 'Xoop Media'
         },
         {
-            'url': 'http://sites.cesarbruschetta.com.brElegant_Design/',
+            'url': 'http://sites.cesarbruschetta.com.br/Elegant_Design/',
             'image': '/static/core/portfolio/site19.png',
             'title': 'Elegant Design'
         },
         {
-            'url': 'http://sites.cesarbruschetta.com.brCab_Inf_New',
+            'url': 'http://sites.cesarbruschetta.com.br/Cab_Inf_New',
             'image': '/static/core/portfolio/site20.png',
             'title': 'Cab Informatica'
         },
@@ -126,7 +126,7 @@ def portfolio(request):
             'title': 'Global Feeds - GAE'
         },
         {
-            'url': 'http://sites.cesarbruschetta.com.brKing_of_Games',
+            'url': 'http://sites.cesarbruschetta.com.br/King_of_Games',
             'image': '/static/core/portfolio/site24.png',
             'title': 'King of Games'
         },

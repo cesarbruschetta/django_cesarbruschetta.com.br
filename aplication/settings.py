@@ -29,6 +29,7 @@ SECRET_KEY = 'hsodhys4r8ha@d%%uwu7#!@b-ul19oeb*q$-e4#zv68rkbs8eh'
 DEBUG = False
 
 ALLOWED_HOSTS = [
+    '*',
     'cesarbruschetta.com.br',
     'www.cesarbruschetta.com.br',
 ]
@@ -94,10 +95,10 @@ DEFAULT_FILE_STORAGE = 'database_files.storage.DatabaseStorage'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sitecesar',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
+        'NAME': os.environ.get('DATABASES_NAME', 'sitedjango'),
+        'USER': os.environ.get('DATABASES_USER', 'root'),
+        'PASSWORD': os.environ.get('DATABASES_PASSWORD', 'root'),
+        'HOST': os.environ.get('DATABASES_HOST', 'localhost'),
         'STORAGE_ENGINE': 'MyISAM',
     }
 }
@@ -105,7 +106,7 @@ DATABASES = {
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': '127.0.0.1:11211',
+        'LOCATION': os.environ.get('CACHES_LOCATION', 'localhost:11211'),
     }
 }
 
@@ -156,9 +157,9 @@ STATICFILES_DIRS = (
 # EMAIL SMTP
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST = 'smtp.zoho.com'
-EMAIL_HOST_USER = 'contato@cesarbruschetta.com.br'
-EMAIL_HOST_PASSWORD = '9vjeboat'
+EMAIL_HOST = os.environ.get('EMAIL_HOST', 'localhost')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 
 # Logging

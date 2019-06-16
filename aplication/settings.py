@@ -33,7 +33,7 @@ ALLOWED_HOSTS = [
     'cesarbruschetta.com.br',
     'www.cesarbruschetta.com.br',
 ]
-
+ALLOWED_HOSTS += os.getenv("ALLOWED_HOSTS", ",").split(",")
 
 # Application definition
 
@@ -95,10 +95,10 @@ DEFAULT_FILE_STORAGE = 'database_files.storage.DatabaseStorage'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DATABASES_NAME', 'sitedjango'),
-        'USER': os.environ.get('DATABASES_USER', 'root'),
-        'PASSWORD': os.environ.get('DATABASES_PASSWORD', 'root'),
-        'HOST': os.environ.get('DATABASES_HOST', 'localhost'),
+        'NAME': os.environ.get('DATABASE_NAME', 'sitedjango'),
+        'USER': os.environ.get('DATABASE_USER', 'root'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'root'),
+        'HOST': os.environ.get('DATABASE_HOST', 'localhost'),
         'STORAGE_ENGINE': 'MyISAM',
     }
 }
@@ -106,7 +106,7 @@ DATABASES = {
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': os.environ.get('CACHES_LOCATION', 'localhost:11211'),
+        'LOCATION': os.environ.get('CACHE_LOCATION', 'localhost:11211'),
     }
 }
 
@@ -157,10 +157,10 @@ STATICFILES_DIRS = (
 # EMAIL SMTP
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST = os.environ.get('EMAIL_HOST', 'localhost')
+EMAIL_HOST = "email-smtp.us-east-1.amazonaws.com"
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-
+DEFAULT_FROM_EMAIL = "no-reply@cesarbruschetta.com.br"
 
 # Logging
 #
@@ -187,10 +187,7 @@ LOGGING = {
         },
         'default': {
             'level': 'INFO',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': '%s/aplication_debug.log' % (BASE_DIR),
-            'maxBytes': 1024 * 1024 * 5,  # 5 MB
-            'backupCount': 5,
+            'class': 'logging.StreamHandler',
             'formatter': 'standard',
         },
     },

@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  mysql_db:
+    image: mysql:8
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+  
+  nginx:
+    image: nginx
+    ports:
+      - "8080:80"
+    depends_on:
+      - webapp
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
+      - ./staticfiles:/app/static/:ro
+    restart: always
+    command: [nginx-debug, '-g', 'daemon off;']
+  
+  webapp:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "8000:8000"
+    tty: true
+    restart: always
+    depends_on:
+      - mysql_db
+    volumes:
+      - ./staticfiles:/app/static/
+    environment:
+      - DJANGO_SETTINGS_MODULE=aplication.settings
+      - DATABASE_NAME=site_db
+      - DATABASE_USER=django
+      - DATABASE_PASSWORD=12345678
+      - DATABASE_HOST=mysql_db
+      - DATABASE_PORT=3306
+      # - CACHE_LOCATION=localhost:11211
+      - EMAIL_HOST_USER=""
+      - EMAIL_HOST_PASSWORD=""
+      - ALLOWED_HOSTS=""

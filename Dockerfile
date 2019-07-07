@@ -5,20 +5,21 @@ COPY ./ /app
 RUN apk --update add --no-cache --virtual .build-deps \
         git build-base mariadb-dev && \
     pip --no-cache-dir install -r /app/requirements.txt && \
-    apk del .build-deps
+    apk del .build-deps && \
+    apk -q --no-cache add mariadb-dev su-exec nginx supervisor
 
-RUN apk -q --no-cache add mariadb-dev su-exec
+RUN chown -R nobody:nogroup /app && \
+  python /app/manage.py collectstatic --noinput && \
+  mv /app/nginx.conf /etc/nginx/conf.d/default.conf &&\
+  mkdir -p /etc/supervisor.d && \
+  mkdir -p /run/nginx && \
+  mv /app/webapp.ini /etc/supervisor.d/
 
-RUN chown -R nobody:nogroup /app
-
-
-USER nobody
-EXPOSE 8000
+EXPOSE 8000 
+EXPOSE 80
 WORKDIR /app
 
 HEALTHCHECK --interval=5m --timeout=3s \
   CMD curl -f http://localhost:8000/ || exit 1
-
-# su-exec python manage.py collectstatic --noinput && \
     
-CMD gunicorn --workers 3 --bind 0.0.0.0:8000 aplication.wsgi --log-level INFO
+CMD ["/usr/bin/supervisord"]

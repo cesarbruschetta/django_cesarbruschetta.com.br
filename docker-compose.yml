@@ -6,31 +6,17 @@ services:
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=root
-  
-  nginx:
-    image: nginx
-    ports:
-      - "8080:80"
-    depends_on:
-      - webapp
-    volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
-      - ./staticfiles:/app/static/:ro
-    restart: always
-    command: [nginx-debug, '-g', 'daemon off;']
-  
+ 
   webapp:
     build:
       context: .
       dockerfile: ./Dockerfile
     ports:
-      - "8000:8000"
+      - "8000:80"
     tty: true
     restart: always
     depends_on:
       - mysql_db
-    volumes:
-      - ./staticfiles:/app/static/
     environment:
       - DJANGO_SETTINGS_MODULE=aplication.settings
       - DATABASE_NAME=site_db

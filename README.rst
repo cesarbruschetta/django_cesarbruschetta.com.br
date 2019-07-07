@@ -3,6 +3,9 @@
 Aplicação do site cesarbruschetta.com.br
 ********************
 
+[![](https://images.microbadger.com/badges/image/cesarbruschetta/django-cesarbruschetta.svg)](https://microbadger.com/images/cesarbruschetta/django-cesarbruschetta "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/cesarbruschetta/django-cesarbruschetta.svg)](https://microbadger.com/images/cesarbruschetta/django-cesarbruschetta "Get your own version badge on microbadger.com")
+
 Tamalho das Imagens
 -----------------------
 

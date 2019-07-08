@@ -6,7 +6,7 @@ RUN apk --update add --no-cache --virtual .build-deps \
         git build-base mariadb-dev && \
     pip --no-cache-dir install -r /app/requirements.txt && \
     apk del .build-deps && \
-    apk -q --no-cache add mariadb-dev su-exec nginx supervisor
+    apk -q --no-cache add mariadb-dev su-exec nginx supervisor curl
 
 RUN chown -R nobody:nogroup /app && \
   python /app/manage.py collectstatic --noinput && \

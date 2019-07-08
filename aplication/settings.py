@@ -145,7 +145,7 @@ MEDIA_URL = '/media/'
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = "static/"
+STATIC_ROOT = os.path.join(PROJECT_DIR, "static")
 
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
